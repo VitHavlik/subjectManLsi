@@ -4,8 +4,9 @@
 
 ##### The SubjectMan application allows users to manage the subjects taught in the school and related study materials.
 
-SEM HODIM OBRÁZEK AŽ ZJISTÍM JAK NA TO 
+![Schema](/SubjectManPick.png)
 
+ 
 **School registers its subjects**
 > The subject holds the following mandatory information: number of credits, supervisor, the goal of the course, degree of study (Bc., Mgr.), the language of study (CZ, EN). Optional information is a description of the subject.
 
