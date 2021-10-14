@@ -7,6 +7,8 @@
 > Schůzku asi netřeba shrnovat :)
 > Důležitý milník je naplánovat další schůzi po zapnutí školního prostředí pro splnění náležitostí.
 
+**Dodělat Scope a Business requests**
+
 
 ### K zamyšlení:
 
@@ -25,7 +27,12 @@ Nemyslím si že bychom dostali databázi učitelů či studentů.
 Jak bude probíhat registrace? Uděláme ji pouze manuálně že nátáhneme xxx studentů a učitelů do databáze nebo udeláme registrační formulář a přes něj to tam nahrajeme, když by chtěl někdo ze zkoušejících vyzkoušet zda to přihlášení funguje i jim.
 
 Jakým způsobem bychom vyřešili práva pro učitele a jestli tam nějaké budou a zda to má význam? 
-Provádět změny na předmětech si stejně budou dělat jen studenti.
+Mohli by maximálně přidat nebo odebrat předmět nebo upravit obsah předmětu. 
+
+Provádět změny na předmětech si ale budou dělat jen studenti sami.
+
+Pokud nebude uživatel přihlášen uvidí pouze nějaký obsah předmětu.
+Po přihlášení se mu zobrazí zbytek s výukovými materiály atd...
 
 
 
