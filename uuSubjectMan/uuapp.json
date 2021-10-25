@@ -1,0 +1,17 @@
+{
+  "product": "uu_subject_man",
+  "version": "0.1.0",
+  "license": "License Commercial",
+  "description": {
+    "en": "",
+    "cs": ""
+  },
+  "devkit": {
+    "development": {
+      "appBoxLocationUri": "----- VALUE REQUIRED -----",
+      "appDeploymentUri": null
+    }
+  },
+  "uu_subject_man-hi": {},
+  "uu_subject_man-server": {}
+}
