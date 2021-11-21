@@ -20,11 +20,6 @@
         "realization": "api/controllers/SubjectsController.listSubjects",
         "httpMethod": "GET",
         "type": "CMD"
-      },
-      "createSubject": {
-        "realization": "api/controllers/SubjectsController.createSubject",
-        "httpMethod": "GET",
-        "type": "CMD"
       }
     }
   }

@@ -50,8 +50,8 @@ export const About = {
   ],
   otherAuthors: [
     {
-      name: "Your Name",
-      uuIdentity: "4-4-1",
+      name: "Radomil Holec",
+      uuIdentity: "1916-8357-1",
       role: {
         en: "Developer",
       },

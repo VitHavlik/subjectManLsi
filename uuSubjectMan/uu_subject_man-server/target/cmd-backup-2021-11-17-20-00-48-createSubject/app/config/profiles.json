@@ -19,11 +19,7 @@
       },
       "listSubjects": {
         "sysStateList": ["active"],
-        "profileList": ["Public"]
-      },
-      "createSubject": {
-        "sysStateList": ["active"],
-        "profileList": ["Public"]
+        "profileList": []
       }
     }
   }
