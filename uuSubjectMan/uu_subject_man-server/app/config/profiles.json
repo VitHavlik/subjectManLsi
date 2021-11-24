@@ -17,13 +17,9 @@
         "sysStateList": ["created"],
         "profileList": ["Public","AwidLicenseOwner"]
       },
-      "listSubjects": {
+      "subject/create": {
         "sysStateList": ["active"],
-        "profileList": ["Public"]
-      },
-      "createSubject": {
-        "sysStateList": ["active"],
-        "profileList": ["Public"]
+        "profileList": ["Authorities"]
       }
     }
   }
