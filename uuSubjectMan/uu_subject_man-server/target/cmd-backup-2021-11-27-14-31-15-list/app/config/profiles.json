@@ -32,10 +32,6 @@
       "topic/create": {
         "sysStateList": ["active"],
         "profileList": ["Authorities"]
-      },
-      "topic/list": {
-        "sysStateList": ["active"],
-        "profileList": ["Authorities"]
       }
     }
   }

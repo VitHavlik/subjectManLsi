@@ -28,19 +28,16 @@ class SubjectAbl {
 
     let dtoOut
     dtoIn.awid = awid
-    // HDS 2
+    // HDS 3
     dtoIn.uuIdentity = session.getIdentity().getUuIdentity();
     dtoIn.uuIdentityName = session.getIdentity().getName();
-    // HDS 3
-    dtoIn.topics = [];
-    dtoIn.digitalContents = [];
     // HDS 4
     try {
       dtoOut = await this.dao.create(dtoIn)
     }
     catch (err) {
       if (err instanceof ObjectStoreError) {
-        throw new Errors.Create.SubjectDaoCreateFailed({ uuAppErrorMap }, err);
+        throw new Errors.Create.SubjectDaoCreateFailed({ uuAppErrorMap }, e);
       }
       return err
     }
@@ -49,21 +46,21 @@ class SubjectAbl {
     return dtoOut
   }
 
-  async list(awid, dtoIn) {
+  async list(awid, dtoIn, session, authorizationResult) {
 
     let uuAppErrorMap;
     let dtoOut;
-
+    // HDS 4
     try {
       dtoOut = await this.dao.list(awid);
     }
     catch (err) {
       if (err instanceof ObjectStoreError) {
-        throw new Errors.List.SubjectListFailed({ uuAppErrorMap }, err);
+        throw new Errors.Create.SubjectListFailed({ uuAppErrorMap }, e);
       }
       return err
     }
-
+    // HDS 5
     dtoOut.uuAppErrorMap = uuAppErrorMap;
     return dtoOut
   }
@@ -76,24 +73,21 @@ class SubjectAbl {
       WARNINGS.createUnsupportedKeys.code, Errors.Create.InvalidDtoIn);
 
     let dtoOut;
-
+    // HDS 4
     try {
       dtoOut = await this.dao.get(dtoIn.id);
     }
     catch (err) {
       if (err instanceof ObjectStoreError) {
-        throw new Errors.Get.SubjectGetFailed({ uuAppErrorMap }, err);
+        throw new Errors.Create.SubjectListFailed({ uuAppErrorMap }, err);
       }
       return err
     }
-
-    if (!dtoOut)
-      throw new Errors.Get.SubjectGetDontExist({ uuAppErrorMap });
-
+    // HDS 5
     dtoOut.uuAppErrorMap = uuAppErrorMap;
     return dtoOut
   }
-
+  
 
 }
 

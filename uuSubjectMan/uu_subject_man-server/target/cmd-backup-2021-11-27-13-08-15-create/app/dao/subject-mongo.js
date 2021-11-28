@@ -12,15 +12,6 @@ class SubjectMongo extends UuObjectDao {
   async list(awid) {
     return await super.find({ awid });
   }
-  async get(subjectId){
-    let filter = {id: subjectId};
-    return await super.findOne(filter);
-  }
-  async update(subject){
-    console.log(subject);
-    let filter = { id: subject.id };
-    return await super.findOneAndUpdate(filter, subject, "NONE");
-  }
 
 }
 

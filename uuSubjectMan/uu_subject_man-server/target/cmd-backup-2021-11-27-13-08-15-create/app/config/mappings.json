@@ -21,24 +21,9 @@
         "httpMethod": "GET",
         "type": "CMD"
       },
-      "subject/get": {
-        "realization": "api/controllers/SubjectController.get",
-        "httpMethod": "GET",
-        "type": "CMD"
-      },
       "subject/create": {
         "realization": "api/controllers/SubjectController.create",
         "httpMethod": "POST",
-        "type": "CMD"
-      },
-      "topic/create": {
-        "realization": "api/controllers/TopicController.create",
-        "httpMethod": "POST",
-        "type": "CMD"
-      },
-      "topic/list": {
-        "realization": "api/controllers/TopicController.list",
-        "httpMethod": "GET",
         "type": "CMD"
       }
     }

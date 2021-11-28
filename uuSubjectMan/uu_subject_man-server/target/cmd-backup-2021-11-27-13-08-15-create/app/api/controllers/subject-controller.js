@@ -11,10 +11,6 @@ class SubjectController {
     return SubjectAbl.list(ucEnv.getUri().getAwid(), ucEnv.getDtoIn(),ucEnv.getSession(), ucEnv.getAuthorizationResult());
   }
 
-  get(ucEnv) {
-    return SubjectAbl.get(ucEnv.getUri().getAwid(), ucEnv.getDtoIn(),ucEnv.getSession(), ucEnv.getAuthorizationResult());
-  }
-
 }
 
 module.exports = new SubjectController();

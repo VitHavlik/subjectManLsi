@@ -21,19 +21,7 @@
         "sysStateList": ["active"],
         "profileList": ["Authorities"]
       },
-      "subject/get": {
-        "sysStateList": ["active"],
-        "profileList": ["Authorities"]
-      },
       "subject/create": {
-        "sysStateList": ["active"],
-        "profileList": ["Authorities"]
-      },
-      "topic/create": {
-        "sysStateList": ["active"],
-        "profileList": ["Authorities"]
-      },
-      "topic/list": {
         "sysStateList": ["active"],
         "profileList": ["Authorities"]
       }

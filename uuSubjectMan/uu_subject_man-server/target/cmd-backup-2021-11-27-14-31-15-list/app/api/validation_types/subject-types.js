@@ -6,7 +6,8 @@ const subjectCreateDtoInType = shape({
     credits: number(Infinity).isRequired(),
     language: oneOf(["CZ", "EN"]).isRequired(),
     guarantor: array().isRequired(),
-    teachers: array().isRequired()
+    teachers: array().isRequired(),
+    state:  oneOf(["active", "inactive"]).isRequired()
 });
 
 const subjectGetDtoInType = shape({

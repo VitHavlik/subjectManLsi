@@ -27,41 +27,9 @@ const Create = {
       this.message = "Subject list by subject Dao list failed.";
     }
   },
-};
 
-const List = {
-  UC_CODE: `${SUBJECT_ERROR_PREFIX}create/`,
-  SubjectListFailed: class extends SubjectManUseCaseError {
-    constructor() {
-      super(...arguments);
-      this.code = `${Create.UC_CODE}subjectDaoListFailed`;
-      this.message = "Subject list by subject Dao list failed.";
-    }
-  },
+  };
 
-};
-
-const Get = {
-  UC_CODE: `${SUBJECT_ERROR_PREFIX}create/`,
-  SubjectGetFailed: class extends SubjectManUseCaseError {
-    constructor() {
-      super(...arguments);
-      this.code = `${Create.UC_CODE}subjectDaoGetFailed`;
-      this.message = "Subject get by subject Dao get failed.";
-    }
-  },
-  SubjectGetDontExist: class extends SubjectManUseCaseError {
-    constructor() {
-      super(...arguments);
-      this.code = `${Create.UC_CODE}subjectGetDontExist`;
-      this.message = "Searched subject do not exist.";
-    }
-  },
-
-};
-
-module.exports = {
-  Create,
-  List,
-  Get
-};
+  module.exports = {
+    Create
+  };

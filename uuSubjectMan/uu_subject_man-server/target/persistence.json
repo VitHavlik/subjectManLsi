@@ -5,8 +5,8 @@
       "type": "uuAppObjectStore",
       "realization": "MongoDB",
       "schemaMap": {
-        "subjectMan": {
-          "realization": "dao/SubjectManMongo"
+        "subject": {
+          "realization": "dao/SubjectMongo"
         },
         "sysAuditLogRecord": {
           "realization": "uu_appg01_auditlog:dao/SysAuditLogRecordMongo"

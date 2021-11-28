@@ -35,11 +35,6 @@
         "realization": "api/controllers/TopicController.create",
         "httpMethod": "POST",
         "type": "CMD"
-      },
-      "topic/list": {
-        "realization": "api/controllers/TopicController.list",
-        "httpMethod": "GET",
-        "type": "CMD"
       }
     }
   }
