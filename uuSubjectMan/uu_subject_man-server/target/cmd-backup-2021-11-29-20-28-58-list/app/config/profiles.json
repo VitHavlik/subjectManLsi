@@ -1,0 +1,62 @@
+{
+  "{asid}": {
+    "profileList": ["AsidAuthorities","AsidExecutives","AsidLicenseOwner","Public"],
+    "useCaseMap": {}
+  },
+  "*": {
+    "profileList": ["Authorities","Executives","AwidLicenseOwner","Public"],
+    "useCaseMap": {
+      "sys/uuAppWorkspace/init": {
+        "sysStateList": ["created"],
+        "profileList": ["AwidLicenseOwner"]
+      },
+      "defaultUve": {
+        "profileList": ["Public"]
+      },
+      "sys/uuAppWorkspace/initUve": {
+        "sysStateList": ["created"],
+        "profileList": ["Public","AwidLicenseOwner"]
+      },
+      "subject/list": {
+        "sysStateList": ["active"],
+        "profileList": ["Authorities"]
+      },
+      "subject/get": {
+        "sysStateList": ["active"],
+        "profileList": ["Authorities"]
+      },
+      "subject/create": {
+        "sysStateList": ["active"],
+        "profileList": ["Authorities"]
+      },
+      "subject/update": {
+        "sysStateList": ["active"],
+        "profileList": ["Authorities"]
+      },
+      "topic/create": {
+        "sysStateList": ["active"],
+        "profileList": ["Authorities"]
+      },
+      "topic/list": {
+        "sysStateList": ["active"],
+        "profileList": ["Authorities"]
+      },
+      "topic/update": {
+        "sysStateList": ["active"],
+        "profileList": ["Authorities"]
+      },
+      "topic/remove": {
+        "sysStateList": ["active"],
+        "profileList": ["Authorities"]
+      },
+      "studdyPtoramme/create": {
+        "sysStateList": ["active"],
+        "profileList": []
+      },
+      "update": {
+        "sysStateList": ["active"],
+        "profileList": []
+      }
+    }
+  }
+}

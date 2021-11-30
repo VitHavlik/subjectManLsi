@@ -18,44 +18,26 @@ class TopicAbl {
 
   constructor() {
     this.validator = Validator.load();
-    this.dao = DaoFactory.getDao("subject");
+    this.dao = DaoFactory.getDao("topic");
   }
-  async create(awid, dtoIn) {
-    //HDS 1.1
-    let validationResult = this.validator.validate("topicCreateDtoInType", dtoIn);
 
-    // HDS 1.2, 1.3 // A1, A2
+  async create(awid, dtoIn, session) {
+    // HDS 2
+    let validationResult = this.validator.validate("topicCreateDtoInType", dtoIn);
+    // HDS 2.2, 2.3 A 2.2.1, A. 2.3.1
     let uuAppErrorMap = ValidationHelper.processValidationResult(dtoIn, validationResult,
       WARNINGS.createUnsupportedKeys.code, Errors.Create.InvalidDtoIn);
 
-    let dtoOut;
-    let foundSubject;
-
-    //HDS 3
+    let dtoOut
+    // HDS 3
+    dtoIn.awid = awid
+    dtoIn.uuIdentity = session.getIdentity().getUuIdentity();
+    dtoIn.uuIdentityName = session.getIdentity().getName();
+    dtoIn.digitalContent = [];
+    dtoIn.state = "init";
+    // HDS 4
     try {
-      foundSubject = await this.dao.get(dtoIn.subjectId)
-    }
-    catch (err) {
-      return err;
-    }
-    if (!foundSubject)
-      throw new Errors.Create.TopicFindSubjectOnCreateFailed({ uuAppErrorMap });
-
-
-    //HDS 4
-    if (foundSubject.topics === undefined)
-      ///HDS 4.A.1  
-      foundSubject.topics = [];
-    else
-      //HDS 4.B
-      foundSubject.topics.push({
-        name: dtoIn.name,
-        description: dtoIn.description
-      });
-
-    // HDS 5
-    try {
-      dtoOut = await this.dao.update(foundSubject);
+      dtoOut = await this.dao.create(dtoIn)
     }
     catch (err) {
       if (err instanceof ObjectStoreError) {
@@ -63,9 +45,9 @@ class TopicAbl {
       }
       return err
     }
-
-    dtoOut.uuAppErrorMap = uuAppErrorMap;
-    return dtoOut;
+    // HDS 5
+    dtoOut.uuAppErrorMap = uuAppErrorMap
+    return dtoOut
   }
 
   async list(awid, dtoIn) {
@@ -77,7 +59,7 @@ class TopicAbl {
     let dtoOut;
     //HDS 3
     try {
-      dtoOut = await this.dao.get(dtoIn.subjectId)
+      dtoOut = await this.dao.listBySubjectId(dtoIn.subjectId)
     }
     catch (err) {
       if (err instanceof ObjectStoreError) {
@@ -86,12 +68,54 @@ class TopicAbl {
       return err;
     }
 
-    if (!dtoOut)
-      throw new Errors.List.TopicListDontExist({ uuAppErrorMap });
-
     dtoOut.uuAppErrorMap = uuAppErrorMap;
-    return dtoOut.topics;
+    return dtoOut;
   }
+
+  async update(awid, dtoIn) {
+    // HDS 1
+    let validationResult = this.validator.validate("topicUpdateDtoInType", dtoIn);
+    // HDS 1.2, 1.3 A 1.2.1, A. 1.3.1
+    let uuAppErrorMap = ValidationHelper.processValidationResult(dtoIn, validationResult,
+      WARNINGS.createUnsupportedKeys.code, Errors.Update.InvalidDtoIn);
+
+    let dtoOut
+    try {
+      dtoOut = await this.dao.update(dtoIn)
+    }
+    catch (err) {
+      if (err instanceof ObjectStoreError) {
+        throw new Errors.Update.TopicDaoUpdateFailed({ uuAppErrorMap }, err);
+      }
+      return err
+    }
+    // HDS 5
+    dtoOut.uuAppErrorMap = uuAppErrorMap
+    return dtoOut
+  }
+
+  async remove(awid, dtoIn) {
+    // HDS 1
+    let validationResult = this.validator.validate("topicRemoveDtoInType", dtoIn);
+    // HDS 1.2, 1.3 A 1.2.1, A. 1.3.1
+    let uuAppErrorMap = ValidationHelper.processValidationResult(dtoIn, validationResult,
+      WARNINGS.createUnsupportedKeys.code, Errors.Remove.InvalidDtoIn);
+
+    let dtoOut
+    try {
+      dtoOut = await this.dao.remove(dtoIn.id);
+    }
+    catch (err) {
+      if (err instanceof ObjectStoreError) {
+        throw new Errors.Remove.TopicDaoRemoveFailed({ uuAppErrorMap }, err);
+      }
+      return err;
+    }
+    // HDS 5
+    dtoOut.uuAppErrorMap = uuAppErrorMap;
+    return dtoOut;
+  }
+
 
 }
 

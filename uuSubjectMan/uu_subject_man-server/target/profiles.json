@@ -408,11 +408,39 @@
         "sysStateList": ["active"],
         "profileList": ["Authorities"]
       },
+      "subject/update": {
+        "sysStateList": ["active"],
+        "profileList": ["Authorities"]
+      },
       "topic/create": {
         "sysStateList": ["active"],
         "profileList": ["Authorities"]
       },
       "topic/list": {
+        "sysStateList": ["active"],
+        "profileList": ["Authorities"]
+      },
+      "topic/update": {
+        "sysStateList": ["active"],
+        "profileList": ["Authorities"]
+      },
+      "topic/remove": {
+        "sysStateList": ["active"],
+        "profileList": ["Authorities"]
+      },
+      "studyProgramme/create": {
+        "sysStateList": ["active"],
+        "profileList": ["Authorities"]
+      },
+      "studyProgramme/update": {
+        "sysStateList": ["active"],
+        "profileList": ["Authorities"]
+      },
+      "studyProgramme/list": {
+        "sysStateList": ["active"],
+        "profileList": ["Authorities"]
+      },
+      "studyProgramme/get": {
         "sysStateList": ["active"],
         "profileList": ["Authorities"]
       }

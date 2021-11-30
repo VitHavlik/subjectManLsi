@@ -9,15 +9,35 @@ class SubjectMongo extends UuObjectDao {
   async create(subject) {
     return await super.insertOne(subject);
   }
-  async list(awid) {
-    return await super.find({ awid });
+  async list() {
+    return await super.find({});
   }
   async get(subjectId){
     let filter = {id: subjectId};
     return await super.findOne(filter);
   }
+
+  async getWithTopics(subjectId){
+    let aggregation = [
+      {"$addFields":{
+        "sbjId": {
+          "$toString": "$_id"
+        }
+      }},
+      {"$lookup":{
+        "from": "topic",
+        "localField": "sbjId",
+        "foreignField": "subjectId",
+        "as": "topics"
+      }},
+      {"$match":{
+        "sbjId": subjectId
+      }}
+    ]
+    return await super.aggregate(aggregation);
+  }
+
   async update(subject){
-    console.log(subject);
     let filter = { id: subject.id };
     return await super.findOneAndUpdate(filter, subject, "NONE");
   }

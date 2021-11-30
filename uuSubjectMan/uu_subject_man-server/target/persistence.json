@@ -8,6 +8,12 @@
         "subject": {
           "realization": "dao/SubjectMongo"
         },
+        "topic": {
+          "realization": "dao/TopicMongo"
+        },
+        "studyProgramme": {
+          "realization": "dao/StudyProgrammeMongo"
+        },
         "sysAuditLogRecord": {
           "realization": "uu_appg01_auditlog:dao/SysAuditLogRecordMongo"
         },

@@ -2,14 +2,14 @@
   "schemaVersion": "1.0.0",
   "schemaSpecificationUri": "https://uuapp.plus4u.net/uu-bookkit-maing01/bef682626ed943f28cde360ccb325981/book/page?code=uuSubAppInstanceDescriptor",
   "uuSubApp": {
-    "code": "UU.SUBJECT.MAN",
+    "code": "UUN.BPMI21WPT18.MAING01",
     "version": "0.1.0",
-    "name": "uuSubjectMan",
+    "name": "uunBpmi21wpt18Maing01",
     "description": "",
     "license": "License Commercial",
     "asidRequired": true,
     "awidCount": 1,
-    "resourcePoolUri": "----- VALUE REQUIRED -----",
+    "resourcePoolUri": "ues:UCL-BT:UUN_STUDENTS03_AWE",
     "uuAppNodeSetMap": {
       "CMD": {
         "nodeSize": "G1_S",
@@ -30,6 +30,7 @@
       }
     },
     "uuConfigMap": {
+      "asid_license_owner_list": ["1916-8357-1", "579-8661-2588-1"]
     }
   }
 }

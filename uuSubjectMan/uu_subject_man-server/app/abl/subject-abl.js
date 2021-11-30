@@ -32,8 +32,7 @@ class SubjectAbl {
     dtoIn.uuIdentity = session.getIdentity().getUuIdentity();
     dtoIn.uuIdentityName = session.getIdentity().getName();
     // HDS 3
-    dtoIn.topics = [];
-    dtoIn.digitalContents = [];
+    dtoIn.state = "init";
     // HDS 4
     try {
       dtoOut = await this.dao.create(dtoIn)
@@ -51,11 +50,11 @@ class SubjectAbl {
 
   async list(awid, dtoIn) {
 
-    let uuAppErrorMap;
+    let uuAppErrorMap = {};
     let dtoOut;
 
     try {
-      dtoOut = await this.dao.list(awid);
+      dtoOut = await this.dao.list();
     }
     catch (err) {
       if (err instanceof ObjectStoreError) {
@@ -78,7 +77,7 @@ class SubjectAbl {
     let dtoOut;
 
     try {
-      dtoOut = await this.dao.get(dtoIn.id);
+      dtoOut = await this.dao.getWithTopics(dtoIn.id);
     }
     catch (err) {
       if (err instanceof ObjectStoreError) {
@@ -94,6 +93,27 @@ class SubjectAbl {
     return dtoOut
   }
 
+  async update(awid, dtoIn) {
+    // HDS 1
+    let validationResult = this.validator.validate("subjectUpdateDtoInType", dtoIn);
+    // HDS 1.2, 1.3 A 1.2.1, A. 1.3.1
+    let uuAppErrorMap = ValidationHelper.processValidationResult(dtoIn, validationResult,
+      WARNINGS.createUnsupportedKeys.code, Errors.Update.InvalidDtoIn);
+
+    let dtoOut
+    try {
+      dtoOut = await this.dao.update(dtoIn)
+    }
+    catch (err) {
+      if (err instanceof ObjectStoreError) {
+        throw new Errors.Update.SubjectDaoUpdateFailed({ uuAppErrorMap }, err);
+      }
+      return err
+    }
+    // HDS 5
+    dtoOut.uuAppErrorMap = uuAppErrorMap
+    return dtoOut
+  }
 
 }
 

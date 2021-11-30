@@ -1,10 +1,20 @@
 /* eslint-disable */
 const topicCreateDtoInType = shape({
-  subjectId: string(64).isRequired(),
-  name: string(100).isRequired(),
-  description: string(1000)
+  name: uu5String(100).isRequired(),
+  description: uu5String(1000),
+  subjectId: uu5String(64).isRequired()
 });
 
 const topicListDtoInType = shape({
-  subjectId: string(64).isRequired()
+  subjectId: uu5String(64).isRequired()
+});
+
+const topicUpdateDtoInType = shape({
+  id: uu5String(64).isRequired(),
+  name: uu5String(100).isRequired(),
+  description: uu5String(1000)
+});
+
+const topicRemoveDtoInType = shape({
+  id: uu5String(64).isRequired()
 });
