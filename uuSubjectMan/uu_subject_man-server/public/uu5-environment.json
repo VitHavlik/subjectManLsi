@@ -1,1 +1,7 @@
-{}
+{
+  "gatewayUri": "http://localhost:8080/uu-subject-man",
+  "awid": "22222222222222222222222222222222",
+  "vendor": "uu",
+  "app": "demoappg01",
+  "subApp": "main"
+}

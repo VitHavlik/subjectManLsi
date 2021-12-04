@@ -9,6 +9,8 @@ import Config from "./config/config";
 import Left from "./left";
 import Bottom from "./bottom";
 import Home from "../routes/home";
+
+import StudyProgrammeRoute from "../routes/studyProgramme-route";
 //@@viewOff:imports
 
 const STATICS = {
@@ -25,6 +27,7 @@ const DEFAULT_USE_CASE = "home";
 const ROUTES = {
   "": DEFAULT_USE_CASE,
   home: { component: <Home /> },
+  studyProgrammes: { component: <StudyProgrammeRoute /> },
   about: { component: <About /> },
   "sys/uuAppWorkspace/initUve": { component: <InitAppWorkspace /> },
   controlPanel: { component: <ControlPanel /> },

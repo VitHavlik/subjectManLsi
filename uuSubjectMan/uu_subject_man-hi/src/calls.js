@@ -38,6 +38,12 @@ let Calls = {
     return await Calls.getWorkspace();
   },
 
+  async getStudyProgrammes(dtoIn){
+    let commandUri = Calls.getCommandUri("studyProgramme/list");
+    const calledData = await Calls.call("get", commandUri, dtoIn);
+    return calledData;
+  },
+
   /*
   For calling command on specific server, in case of developing client site with already deployed
   server in uuCloud etc. You can specify url of this application (or part of url) in development
