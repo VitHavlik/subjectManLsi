@@ -16,7 +16,7 @@ class SubjectMongo extends UuObjectDao {
   }
 
   async listByStudyProgrammeId(studyProgrammeId) {
-    let filter = {studyProgrammeIds: studyProgrammeId};
+    let filter = {"studyProgrammes.studyProgrammeId": studyProgrammeId};
     return await super.find(filter);
   }
 

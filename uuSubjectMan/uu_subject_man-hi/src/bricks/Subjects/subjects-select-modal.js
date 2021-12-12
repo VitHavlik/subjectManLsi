@@ -62,15 +62,25 @@ const SubjectsSelectModal = createVisualComponentWithRef({
               >
                 <UU5.Forms.Select
                   label={<UU5.Bricks.Lsi lsi={Lsi.form.subjects} />}
-                  name="subject"
+                  name="subjectId"
                   required
                 >
                   {
-                    data?.map((subj)=>(
+                    data?.map((subj) => (
                       <UU5.Forms.Select.Option key={subj.data.id} value={subj.data.id} content={subj.data.name} />
                     ))
                   }
                 </UU5.Forms.Select>
+                <UU5.Forms.Number
+                  label={<UU5.Bricks.Lsi lsi={Lsi.form.credits} />}
+                  name="semester"
+                  value={0}
+                  min={0}
+                  max={10}
+                  step={1}
+                  valueType="number"
+                  required
+                />
                 <UU5.Forms.Controls controlled={false} />
               </UU5.Forms.Form>
             </>

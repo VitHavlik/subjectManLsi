@@ -80,16 +80,6 @@ const SubjectsCreateModal = createVisualComponentWithRef({
           valueType="number"
           required
         />
-        <UU5.Forms.Number
-          label={<UU5.Bricks.Lsi lsi={Lsi.form.semester} />}
-          name="semester"
-          value={props?.subject ? props?.subject.semester : undefined}
-          min={1}
-          max={10}
-          step={1}
-          valueType="number"
-          required
-        />
         <UU5.Forms.TagSelect
           label={<UU5.Bricks.Lsi lsi={Lsi.form.teachers} />}
           name="teachers"

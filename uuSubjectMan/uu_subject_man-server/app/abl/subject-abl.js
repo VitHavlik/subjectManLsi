@@ -34,7 +34,7 @@ class SubjectAbl {
     // HDS 3
     dtoIn.state = "init";
     // HDS 4
-    dtoIn.studyProgrammeIds = [];
+    dtoIn.studyProgrammes = [];
     // HDS 5
     try {
       dtoOut = await this.dao.create(dtoIn)
@@ -165,10 +165,13 @@ class SubjectAbl {
     if (!readSubject)
       throw new Errors.AssignSubject.SubjectDontExistFailed({ uuAppErrorMap });
 
-    if (readSubject.studyProgrammeIds.find(element => element === dtoIn.studyProgrammeId) === dtoIn.studyProgrammeId)
+    if (readSubject.studyProgrammes.find(element => element.studyProgrammeId === dtoIn.studyProgrammeId) === dtoIn.studyProgrammeId)
       throw new Errors.AssignSubject.SubjecAlreadyAssignedToStudyProgFailed({ uuAppErrorMap });
 
-    readSubject.studyProgrammeIds.push(dtoIn.studyProgrammeId);
+    readSubject.studyProgrammes.push({
+      studyProgrammeId: dtoIn.studyProgrammeId,
+      semester: dtoIn.semester
+    });
 
     let dtoOut
     try {
@@ -207,12 +210,12 @@ class SubjectAbl {
         if (!readSubject)
           throw new Errors.RemoveSubject.SubjectDontExistFailed({ uuAppErrorMap });
     
-        const foundSubject = readSubject.studyProgrammeIds.findIndex(element => element === dtoIn.studyProgrammeId)
+        const foundSubject = readSubject.studyProgrammes.findIndex(element => element.studyProgrammeId === dtoIn.studyProgrammeId)
 
         if (foundSubject < 0)
           throw new Errors.RemoveSubject.SubjecNotAssignedToStudyProgFailed({ uuAppErrorMap });
     
-        readSubject.studyProgrammeIds.splice(foundSubject, 1);
+        readSubject.studyProgrammes.splice(foundSubject, 1);
     
         let dtoOut
         try {

@@ -19,6 +19,7 @@ export const SubjectInStudyProgrammeListReady = createVisualComponent({
     //@@viewOn:propTypes
     propTypes: {
         data: UU5.PropTypes.array,
+        studyProgrammeId: UU5.PropTypes.string,
         handleSubjectAdd: UU5.PropTypes.func,
         handleSubjectRemove: UU5.PropTypes.func
     },
@@ -27,6 +28,7 @@ export const SubjectInStudyProgrammeListReady = createVisualComponent({
     //@@viewOn:defaultProps
     defaultProps: {
         data: [],
+        studyProgrammeId: "",
         handleSubjectAdd: () => { },
         handleSubjectRemove: () => { }
     },
@@ -60,6 +62,10 @@ export const SubjectInStudyProgrammeListReady = createVisualComponent({
             {
                 cell: cellProps => <UU5.Bricks.Lsi lsi={cellProps.data.data.credits} />,
                 header: <UU5.Bricks.Lsi lsi={{ en: "Credits", cs: "Kredity" }} />
+            },
+            {
+                cell: cellProps => <UU5.Bricks.Lsi lsi={cellProps.data.data.studyProgrammes.find(stdProg => stdProg.studyProgrammeId === props?.studyProgrammeId)?.semester} />,
+                header: <UU5.Bricks.Lsi lsi={{ en: "semester", cs: "semester" }} />
             },
             {
                 cell: cellProps => <UU5.Bricks.Button content="Odstaň" onClick={()=>{props.handleSubjectRemove(cellProps.data.data.id);}}></UU5.Bricks.Button>,

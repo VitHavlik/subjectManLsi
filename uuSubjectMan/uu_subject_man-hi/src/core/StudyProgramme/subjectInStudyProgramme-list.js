@@ -49,6 +49,7 @@ export const SubjectInStudyProgrammeList = createVisualComponent({
                     child = (
                         <>
                             <SubjectInStudyProgrammeListReady data={data}
+                            studyProgrammeId={props.studyProgrammeId}
                                 handleSubjectAdd={handleSelectSubject}
                                 handleSubjectRemove={handleRemoveSubject}
                             />
@@ -120,8 +121,9 @@ export const SubjectInStudyProgrammeList = createVisualComponent({
                 let data, error;
                 try {
                     const dataToAsign = {
-                        id: values.subject,
-                        studyProgrammeId: props.studyProgrammeId
+                        id: values.subjectId,
+                        studyProgrammeId: props.studyProgrammeId,
+                        semester: values.semester
                     }
                     data = await handlerMap.asignSubject(dataToAsign);
                 } catch (e) {
