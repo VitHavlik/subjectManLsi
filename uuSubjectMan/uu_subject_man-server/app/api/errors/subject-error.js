@@ -22,7 +22,7 @@ const Create = {
 };
 
 const List = {
-  UC_CODE: `${SUBJECT_ERROR_PREFIX}create/`,
+  UC_CODE: `${SUBJECT_ERROR_PREFIX}list/`,
   SubjectListFailed: class extends SubjectManUseCaseError {
     constructor() {
       super(...arguments);
@@ -33,8 +33,33 @@ const List = {
 
 };
 
+const ListByStudyProgramme = {
+  UC_CODE: `${SUBJECT_ERROR_PREFIX}listByStudyProgramme/`,
+  InvalidDtoIn: class extends SubjectManUseCaseError {
+    constructor() {
+      super(...arguments);
+      this.code = `${Create.UC_CODE}invalidDtoIn`;
+      this.message = "DtoIn is not valid.";
+    }
+  },
+  SubjectListFailed: class extends SubjectManUseCaseError {
+    constructor() {
+      super(...arguments);
+      this.code = `${Create.UC_CODE}subjectDaoListByStudyProgrammeFailed`;
+      this.message = "Subject list by study programme ID by subject Dao list failed.";
+    }
+  },
+};
+
 const Get = {
-  UC_CODE: `${SUBJECT_ERROR_PREFIX}create/`,
+  UC_CODE: `${SUBJECT_ERROR_PREFIX}get/`,
+  InvalidDtoIn: class extends SubjectManUseCaseError {
+    constructor() {
+      super(...arguments);
+      this.code = `${Create.UC_CODE}invalidDtoIn`;
+      this.message = "DtoIn is not valid.";
+    }
+  },
   SubjectGetFailed: class extends SubjectManUseCaseError {
     constructor() {
       super(...arguments);
@@ -70,7 +95,88 @@ const Update = {
   },
 };
 
+const AssignSubject = {
+  UC_CODE: `${SUBJECT_ERROR_PREFIX}assignSubject/`,
+  InvalidDtoIn: class extends SubjectManUseCaseError {
+    constructor() {
+      super(...arguments);
+      this.code = `${Create.UC_CODE}invalidDtoIn`;
+      this.message = "DtoIn is not valid.";
+    }
+  },
+  SubjectGetFailed: class extends SubjectManUseCaseError {
+    constructor() {
+      super(...arguments);
+      this.code = `${Create.UC_CODE}subjectDaoAssignStudyProgramFailed`;
+      this.message = "Subject get by subject Dao get failed.";
+    }
+  },
+  SubjectDaoUpdateFailed: class extends SubjectManUseCaseError {
+    constructor() {
+      super(...arguments);
+      this.code = `${Create.UC_CODE}subjectDaoAssignStudyProgramFailed`;
+      this.message = "Assign study programme to subject by subject Dao update failed.";
+    }
+  },
+  SubjectDontExistFailed: class extends SubjectManUseCaseError {
+    constructor() {
+      super(...arguments);
+      this.code = `${Create.UC_CODE}subjectDaoAssignStudyProgramFailed`;
+      this.message = "Subject id you selected does not exist.";
+    }
+  },
+  SubjecAlreadyAssignedToStudyProgFailed: class extends SubjectManUseCaseError {
+    constructor() {
+      super(...arguments);
+      this.code = `${Create.UC_CODE}subjectDaoAssignStudyProgramFailed`;
+      this.message = "Subject is already assigned to this study programme.";
+    }
+  },
+};
+
+const RemoveSubject = {
+  UC_CODE: `${SUBJECT_ERROR_PREFIX}removeSubject/`,
+  InvalidDtoIn: class extends SubjectManUseCaseError {
+    constructor() {
+      super(...arguments);
+      this.code = `${Create.UC_CODE}invalidDtoIn`;
+      this.message = "DtoIn is not valid.";
+    }
+  },
+  SubjectGetFailed: class extends SubjectManUseCaseError {
+    constructor() {
+      super(...arguments);
+      this.code = `${Create.UC_CODE}subjectDaoRemoveStudyProgramFailed`;
+      this.message = "Subject get by subject Dao get failed.";
+    }
+  },
+  SubjectDaoUpdateFailed: class extends SubjectManUseCaseError {
+    constructor() {
+      super(...arguments);
+      this.code = `${Create.UC_CODE}subjectDaoRemoveStudyProgramFailed`;
+      this.message = "Remove study programme from subject by subject Dao update failed.";
+    }
+  },
+  SubjectDontExistFailed: class extends SubjectManUseCaseError {
+    constructor() {
+      super(...arguments);
+      this.code = `${Create.UC_CODE}subjectDaoRemoveStudyProgramFailed`;
+      this.message = "Subject id you selected does not exist.";
+    }
+  },
+  SubjecNotAssignedToStudyProgFailed: class extends SubjectManUseCaseError {
+    constructor() {
+      super(...arguments);
+      this.code = `${Create.UC_CODE}subjectDaoRemoveStudyProgramFailed`;
+      this.message = "Subject is not assigned to this study programme.";
+    }
+  },
+};
+
 module.exports = {
+  RemoveSubject,
+  ListByStudyProgramme,
+  AssignSubject,
   Update,
   Create,
   List,

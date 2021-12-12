@@ -443,6 +443,18 @@
       "studyProgramme/get": {
         "sysStateList": ["active"],
         "profileList": ["Authorities"]
+      },
+      "subject/assignSubject": {
+        "sysStateList": ["active"],
+        "profileList": ["Public", "Authorities"]
+      },
+      "subject/listByStudyProgramme": {
+        "sysStateList": ["active"],
+        "profileList": ["Public"]
+      },
+      "subject/removeSubject": {
+        "sysStateList": ["active"],
+        "profileList": ["Public"]
       }
     }
   }

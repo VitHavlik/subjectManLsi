@@ -1,0 +1,460 @@
+{
+  "pageEntries": [
+    {
+      "name": null,
+      "appBoxUri": "ues:UCL-BT[118500965363973101]:UUN.BPMI21WPT15.MAING01/APPBOX-0.1.9-DEV[44191601992831759]",
+      "asid": "ef140c7ef7b8d83f88cfddef60aaa991",
+      "appBoxCode": "UUN.BPMI21WPT15.MAING01/APPBOX-0.1.0",
+      "code": "UUN.BPMI21WPT15.MAING01",
+      "state": "DEPLOYED",
+      "version": "0.1.9-DEV.20211206224650",
+      "urlPath": "uun-bpmi21wpt15-maing01",
+      "multitenant": true,
+      "resourcePoolUri": "ues:UCL-BT[118500965363973101]:UUN_STUDENTS03_AWE[61797a92a1342b81b8058028]",
+      "tenantUri": "ues:DTC-BT[99923616732520257]:UCL-BT[60a791f6a1342b16e73d7b21]",
+      "lastStateChange": "2021-12-06T22:45:36.072Z",
+      "description": null,
+      "uri": "ues:UCL-BT[118500965363973101]:UUN_STUDENTS03_AWE[61797a92a1342b81b8058028]:UUN.BPMI21WPT15.MAING01[61a5fcf0a1342bac1f058104]",
+      "config": {
+        "code": "UUN.BPMI21WPT15.MAING01",
+        "cdnPack": null,
+        "uri": "ues:UCL-BT[118500965363973101]:UUN.BPMI21WPT15.MAING01/APPBOX-0.1.9-DEV[44191601992831759]",
+        "version": "0.1.9-DEV.20211206224650",
+        "urlPath": "uun-bpmi21wpt15-maing01",
+        "multitenant": true,
+        "appMetaModel": null,
+        "msgBusses": [],
+        "deploymentTimeConfig": {
+          "asid_license_owner_list": [
+            "579-7979-4133-1",
+            "7168-8915-1",
+            "2242-1472-1",
+            "8995-9337-1",
+            "9886-6835-1"
+          ],
+          "asid": "ef140c7ef7b8d83f88cfddef60aaa991",
+          "privilegedUserMap": {
+            "asidOwner": "579-7979-4133-1"
+          },
+          "tid": "118500965363973101",
+          "uuSubAppDataStoreMap": {
+            "primary": "osid:7nvffygrvwzjtkoc3gpzihquzekp24nxm",
+            "binary": "bsid:7nvffygrvwzjtkoc3gpzihquzekp24nxm"
+          }
+        },
+        "asid": "ef140c7ef7b8d83f88cfddef60aaa991",
+        "uuEEsMapping": {},
+        "msgBusMapping": {},
+        "deployUnits": [
+          {
+            "code": "UUN.BPMI21WPT15.MAING01/CMD-PACK",
+            "version": "0.1.9-DEV.20211206224650",
+            "appCode": "UUN.BPMI21WPT15.MAING01",
+            "urlPath": "uun-bpmi21wpt15-maing01",
+            "uri": "ues:UCL-BT[118500965363973101]:UUN.BPMI21WPT15.MAING01/APPBOX-0.1.9-DEV[44191601992831759]:UUN.BPMI21WPT15.MAING01/CMD-PACK",
+            "nodeSetCode": "UUN.BPMI21WPT15.MAING01/CMD-CONTAINER",
+            "stack": "UU.APPG01/APPSERVER_NODEJS_STACK-1.6",
+            "nodeSize": "G1_S",
+            "nodeCount": 1
+          }
+        ],
+        "appBoxUri": "ues:[118500965363973101]:[44191601992831759]",
+        "appBoxCode": "UUN.BPMI21WPT15.MAING01/APPBOX-0.1.9-DEV",
+        "portMapping": null
+      },
+      "nodeSets": [
+        {
+          "uri": "ues:[99923616732520257]:[61ae9240a1342bcb3305838a]",
+          "nodeCount": 1,
+          "code": "UUN_BPMI21WPT15_MAING01_CMD_PACK/UUN_BPMI21WPT15_MAING01_CMD_CONTAINER/UCL_BT/ef140c7ef7b8d83f88cfddef60aaa991",
+          "allocatedCapacity": {
+            "cpu": 1,
+            "mem": 500,
+            "storage": 1000
+          }
+        }
+      ],
+      "allocatedCapacity": {
+        "cpu": 1,
+        "mem": 500,
+        "storage": 1000
+      },
+      "msgBusses": []
+    },
+    {
+      "name": null,
+      "appBoxUri": "ues:UCL-BT[118500965363973101]:UUN.BPMI21WFT017.MAING01/APPBOX-0.1.0-dev[44191601935713360]",
+      "asid": "84c8478dd06a78b04a3b7ed629dc8805",
+      "appBoxCode": "UUN.BPMI21WFT017.MAING01/APPBOX-0.1.0",
+      "code": "UUN.BPMI21WFT017.MAING01",
+      "state": "DEPLOYED",
+      "version": "0.1.0-dev.5",
+      "urlPath": "uun-bpmi21wft017-maing01",
+      "multitenant": true,
+      "resourcePoolUri": "ues:UCL-BT[118500965363973101]:UUN_STUDENTS03_AWE[61797a92a1342b81b8058028]",
+      "tenantUri": "ues:DTC-BT[99923616732520257]:UCL-BT[60a791f6a1342b16e73d7b21]",
+      "lastStateChange": "2021-12-08T13:30:11.020Z",
+      "description": null,
+      "uri": "ues:UCL-BT[118500965363973101]:UUN_STUDENTS03_AWE[61797a92a1342b81b8058028]:UUN.BPMI21WFT017.MAING01[61a75992a1342b3d820581f8]",
+      "config": {
+        "code": "UUN.BPMI21WFT017.MAING01",
+        "cdnPack": null,
+        "uri": "ues:UCL-BT[118500965363973101]:UUN.BPMI21WFT017.MAING01/APPBOX-0.1.0-dev[44191601935713360]",
+        "version": "0.1.0-dev.5",
+        "urlPath": "uun-bpmi21wft017-maing01",
+        "multitenant": true,
+        "appMetaModel": null,
+        "msgBusses": [],
+        "deploymentTimeConfig": {
+          "log_level": "ERROR",
+          "asid_license_owner_list": [
+            "579-5605-5699-1",
+            "10-6071-1",
+            "19-9102-1"
+          ],
+          "asid": "84c8478dd06a78b04a3b7ed629dc8805",
+          "privilegedUserMap": {
+            "asidOwner": "579-5605-5699-1"
+          },
+          "tid": "118500965363973101",
+          "uuSubAppDataStoreMap": {
+            "primary": "osid:2e4p6qwzhiuqynqnmfr0h8lbwgcnxkz7g"
+          }
+        },
+        "asid": "84c8478dd06a78b04a3b7ed629dc8805",
+        "uuEEsMapping": {},
+        "msgBusMapping": {},
+        "deployUnits": [
+          {
+            "code": "UUN.BPMI21WFT017.MAING01/CMD-PACK",
+            "version": "0.1.0-dev.5",
+            "appCode": "UUN.BPMI21WFT017.MAING01",
+            "urlPath": "uun-bpmi21wft017-maing01",
+            "uri": "ues:UCL-BT[118500965363973101]:UUN.BPMI21WFT017.MAING01/APPBOX-0.1.0-dev[44191601935713360]:UUN.BPMI21WFT017.MAING01/CMD-PACK",
+            "nodeSetCode": "UUN.BPMI21WFT017.MAING01/CMD-CONTAINER",
+            "stack": "UU.APPG01/APPSERVER_NODEJS_STACK-1.6",
+            "nodeSize": "G1_S",
+            "nodeCount": 1
+          }
+        ],
+        "appBoxUri": "ues:[118500965363973101]:[44191601935713360]",
+        "appBoxCode": "UUN.BPMI21WFT017.MAING01/APPBOX-0.1.0-dev",
+        "portMapping": null
+      },
+      "nodeSets": [
+        {
+          "uri": "ues:[99923616732520257]:[61aa1a15a1342bcb330582b8]",
+          "nodeCount": 1,
+          "code": "UUN_BPMI21WFT017_MAING01_CMD_PACK/UUN_BPMI21WFT017_MAING01_CMD_CONTAINER/UCL_BT/84c8478dd06a78b04a3b7ed629dc8805",
+          "allocatedCapacity": {
+            "cpu": 1,
+            "mem": 500,
+            "storage": 1000
+          }
+        }
+      ],
+      "allocatedCapacity": {
+        "cpu": 1,
+        "mem": 500,
+        "storage": 1000
+      },
+      "msgBusses": []
+    },
+    {
+      "name": null,
+      "appBoxUri": "ues:[118500965363973101]:[44191601946444558]",
+      "asid": "2fbf5059b9fc580295d5f72ef29f6ca7",
+      "appBoxCode": "UUN.SUBJECTTERMMAN.MAING01/APPBOX-0.1.0",
+      "code": "UUN.SUBJECTTERMMAN.MAING01",
+      "state": "CREATED",
+      "version": "new",
+      "urlPath": "uun-subjecttermman-maing01",
+      "multitenant": true,
+      "resourcePoolUri": "ues:UCL-BT[118500965363973101]:UUN_STUDENTS03_AWE[61797a92a1342b81b8058028]",
+      "tenantUri": "ues:DTC-BT[99923616732520257]:UCL-BT[60a791f6a1342b16e73d7b21]",
+      "lastStateChange": "2021-12-02T14:37:11.967Z",
+      "description": null,
+      "uri": "ues:UCL-BT[118500965363973101]:UUN_STUDENTS03_AWE[61797a92a1342b81b8058028]:UUN.SUBJECTTERMMAN.MAING01[61a8d687a1342bcb33058240]",
+      "config": {
+        "code": "UUN.SUBJECTTERMMAN.MAING01",
+        "cdnPack": null,
+        "uri": "ues:UCL-BT[118500965363973101]:UUN.SUBJECTTERMMAN.MAING01/APPBOX-0.1.0[44191601946444558]",
+        "version": "0.1.0",
+        "urlPath": "uun-subjecttermman-maing01",
+        "multitenant": true,
+        "appMetaModel": null,
+        "msgBusses": [],
+        "deploymentTimeConfig": {
+          "asid": "2fbf5059b9fc580295d5f72ef29f6ca7",
+          "privilegedUserMap": {
+            "asidOwner": "579-2649-8753-1"
+          },
+          "tid": "118500965363973101",
+          "uuSubAppDataStoreMap": {
+            "primary": "osid:9vkodxff7m00xhm3ah8o6esvmlyf7t0ja"
+          }
+        },
+        "asid": "2fbf5059b9fc580295d5f72ef29f6ca7",
+        "uuEEsMapping": {},
+        "msgBusMapping": {},
+        "deployUnits": [
+          {
+            "code": "UUN.SUBJECTTERMMAN.MAING01/CMD-PACK",
+            "version": "0.1.0",
+            "appCode": "UUN.SUBJECTTERMMAN.MAING01",
+            "urlPath": "uun-subjecttermman-maing01",
+            "uri": "ues:UCL-BT[118500965363973101]:UUN.SUBJECTTERMMAN.MAING01/APPBOX-0.1.0[44191601946444558]:UUN.SUBJECTTERMMAN.MAING01/CMD-PACK",
+            "nodeSetCode": "UUN.SUBJECTTERMMAN.MAING01/CMD-CONTAINER",
+            "stack": "UU.APPG01/APPSERVER_NODEJS_STACK-1.6",
+            "nodeSize": "G1_S",
+            "nodeCount": 1
+          }
+        ],
+        "appBoxUri": "ues:[118500965363973101]:[44191601946444558]",
+        "appBoxCode": "UUN.SUBJECTTERMMAN.MAING01/APPBOX-0.1.0",
+        "portMapping": null
+      },
+      "nodeSets": [],
+      "allocatedCapacity": {
+        "cpu": 0,
+        "mem": 0,
+        "storage": 0
+      },
+      "msgBusses": []
+    },
+    {
+      "name": null,
+      "appBoxUri": "ues:UCL-BT[118500965363973101]:UUN.BPMI21WFTEN02.MAING01/APPBOX-0.5.0[44191601947071461]",
+      "asid": "2fbf5059b9fc580295d5f72ef29f6ca7",
+      "appBoxCode": "UUN.BPMI21WFTEN02.MAING01/APPBOX-0.1.0",
+      "code": "UUN.BPMI21WFTEN02.MAING01",
+      "state": "DEPLOYED",
+      "version": "0.5.0",
+      "urlPath": "uun-bpmi21wften02-maing01",
+      "multitenant": true,
+      "resourcePoolUri": "ues:UCL-BT[118500965363973101]:UUN_STUDENTS03_AWE[61797a92a1342b81b8058028]",
+      "tenantUri": "ues:DTC-BT[99923616732520257]:UCL-BT[60a791f6a1342b16e73d7b21]",
+      "lastStateChange": "2021-12-07T20:46:36.653Z",
+      "description": null,
+      "uri": "ues:UCL-BT[118500965363973101]:UUN_STUDENTS03_AWE[61797a92a1342b81b8058028]:UUN.BPMI21WFTEN02.MAING01[61a8daaea1342bac1f058254]",
+      "config": {
+        "code": "UUN.BPMI21WFTEN02.MAING01",
+        "cdnPack": null,
+        "uri": "ues:UCL-BT[118500965363973101]:UUN.BPMI21WFTEN02.MAING01/APPBOX-0.5.0[44191601947071461]",
+        "version": "0.5.0",
+        "urlPath": "uun-bpmi21wften02-maing01",
+        "multitenant": true,
+        "appMetaModel": null,
+        "msgBusses": [],
+        "deploymentTimeConfig": {
+          "asid": "2fbf5059b9fc580295d5f72ef29f6ca7",
+          "privilegedUserMap": {
+            "asidOwner": "579-2649-8753-1"
+          },
+          "tid": "118500965363973101",
+          "uuSubAppDataStoreMap": {
+            "primary": "osid:9vkodxff7m00xhm3ah8o6esvmlyf7t0ja"
+          }
+        },
+        "asid": "2fbf5059b9fc580295d5f72ef29f6ca7",
+        "uuEEsMapping": {},
+        "msgBusMapping": {},
+        "deployUnits": [
+          {
+            "code": "UUN.BPMI21WFTEN02.MAING01/CMD-PACK",
+            "version": "0.5.0",
+            "appCode": "UUN.BPMI21WFTEN02.MAING01",
+            "urlPath": "uun-bpmi21wften02-maing01",
+            "uri": "ues:UCL-BT[118500965363973101]:UUN.BPMI21WFTEN02.MAING01/APPBOX-0.5.0[44191601947071461]:UUN.BPMI21WFTEN02.MAING01/CMD-PACK",
+            "nodeSetCode": "UUN.BPMI21WFTEN02.MAING01/CMD-CONTAINER",
+            "stack": "UU.APPG01/APPSERVER_NODEJS_STACK-1.6",
+            "nodeSize": "G1_S",
+            "nodeCount": 1
+          }
+        ],
+        "appBoxUri": "ues:[118500965363973101]:[44191601947071461]",
+        "appBoxCode": "UUN.BPMI21WFTEN02.MAING01/APPBOX-0.5.0",
+        "portMapping": null
+      },
+      "nodeSets": [
+        {
+          "uri": "ues:[99923616732520257]:[61af1cd5a1342b76a0058396]",
+          "nodeCount": 1,
+          "code": "UUN_BPMI21WFTEN02_MAING01_CMD_PACK/UUN_BPMI21WFTEN02_MAING01_CMD_CONTAINER/UCL_BT/2fbf5059b9fc580295d5f72ef29f6ca7",
+          "allocatedCapacity": {
+            "cpu": 1,
+            "mem": 500,
+            "storage": 1000
+          }
+        }
+      ],
+      "allocatedCapacity": {
+        "cpu": 1,
+        "mem": 500,
+        "storage": 1000
+      },
+      "msgBusses": []
+    },
+    {
+      "name": null,
+      "appBoxUri": "ues:[118500965363973101]:[44191602007956558]",
+      "asid": "cf27a5633dc776d8e16466c970cca3e6",
+      "appBoxCode": "UUN.BPMI21WPT13.MAING01/APPBOX-0.1.0-DEV",
+      "code": "UUN.BPMI21WPT13.MAING01",
+      "state": "DEPLOYED",
+      "version": "0.1.0-DEV.20211208080509",
+      "urlPath": "uun-bpmi21wpt13-maing01",
+      "multitenant": true,
+      "resourcePoolUri": "ues:UCL-BT[118500965363973101]:UUN_STUDENTS03_AWE[61797a92a1342b81b8058028]",
+      "tenantUri": "ues:DTC-BT[99923616732520257]:UCL-BT[60a791f6a1342b16e73d7b21]",
+      "lastStateChange": "2021-12-08T09:15:16.220Z",
+      "description": null,
+      "uri": "ues:UCL-BT[118500965363973101]:UUN_STUDENTS03_AWE[61797a92a1342b81b8058028]:UUN.BPMI21WPT13.MAING01[61b0668ea1342b95630583bc]",
+      "config": {
+        "code": "UUN.BPMI21WPT13.MAING01",
+        "cdnPack": null,
+        "uri": "ues:UCL-BT[118500965363973101]:UUN.BPMI21WPT13.MAING01/APPBOX-0.1.0-DEV[44191602007956558]",
+        "version": "0.1.0-DEV.20211208080509",
+        "urlPath": "uun-bpmi21wpt13-maing01",
+        "multitenant": true,
+        "appMetaModel": null,
+        "msgBusses": [],
+        "deploymentTimeConfig": {
+          "asid_license_owner_list": [
+            "579-7074-7171-1",
+            "3822-5689-1",
+            "8212-7820-1",
+            "9931-120-1",
+            "5360-547-1"
+          ],
+          "asid": "cf27a5633dc776d8e16466c970cca3e6",
+          "privilegedUserMap": {
+            "asidOwner": "18-7437-1"
+          },
+          "tid": "118500965363973101",
+          "uuSubAppDataStoreMap": {
+            "primary": "osid:der4e1fqrteaeutdlyacsrx0t2gl1m5oh"
+          }
+        },
+        "asid": "cf27a5633dc776d8e16466c970cca3e6",
+        "uuEEsMapping": {},
+        "deployUnits": [
+          {
+            "code": "UUN.BPMI21WPT13.MAING01/CMD-PACK",
+            "version": "0.1.0-DEV.20211208080509",
+            "appCode": "UUN.BPMI21WPT13.MAING01",
+            "urlPath": "uun-bpmi21wpt13-maing01",
+            "uri": "ues:UCL-BT[118500965363973101]:UUN.BPMI21WPT13.MAING01/APPBOX-0.1.0-DEV[44191602007956558]:UUN.BPMI21WPT13.MAING01/CMD-PACK",
+            "nodeSetCode": "UUN.BPMI21WPT13.MAING01/CMD-CONTAINER",
+            "stack": "UU.APPG01/APPSERVER_NODEJS_STACK-1.6",
+            "nodeSize": "G1_S",
+            "nodeCount": 1
+          }
+        ],
+        "appBoxUri": "ues:[118500965363973101]:[44191602007956558]",
+        "appBoxCode": "UUN.BPMI21WPT13.MAING01/APPBOX-0.1.0-DEV",
+        "portMapping": null
+      },
+      "nodeSets": [
+        {
+          "uri": "ues:[99923616732520257]:[61b07755a1342baa6d0583ca]",
+          "nodeCount": 1,
+          "code": "BETA/UUN_BPMI21WPT13_MAING01_CMD_PACK/UUN_BPMI21WPT13_MAING01_CMD_CONTAINER/UCL_BT/cf27a5633dc776d8e16466c970cca3e6",
+          "allocatedCapacity": {
+            "cpu": 1,
+            "mem": 500,
+            "storage": 1000
+          }
+        }
+      ],
+      "allocatedCapacity": {
+        "cpu": 1,
+        "mem": 500,
+        "storage": 1000
+      },
+      "msgBusses": []
+    },
+    {
+      "name": null,
+      "appBoxUri": "ues:UCL-BT[118500965363973101]:UUN.BPMI21WPT18.MAING01/APPBOX-0.1.1[44191602011476724]",
+      "asid": "607685e335aa9ae56bf83985a313c695",
+      "appBoxCode": "UUN.BPMI21WPT18.MAING01/APPBOX-0.1.0",
+      "code": "UUN.BPMI21WPT18.MAING01",
+      "state": "DEPLOYED",
+      "version": "0.1.1",
+      "urlPath": "uun-bpmi21wpt18-maing01",
+      "multitenant": true,
+      "resourcePoolUri": "ues:UCL-BT[118500965363973101]:UUN_STUDENTS03_AWE[61797a92a1342b81b8058028]",
+      "tenantUri": "ues:DTC-BT[99923616732520257]:UCL-BT[60a791f6a1342b16e73d7b21]",
+      "lastStateChange": "2021-12-08T13:52:23.744Z",
+      "description": null,
+      "uri": "ues:UCL-BT[118500965363973101]:UUN_STUDENTS03_AWE[61797a92a1342b81b8058028]:UUN.BPMI21WPT18.MAING01[61b0a8b7a1342b05db0583d7]",
+      "config": {
+        "code": "UUN.BPMI21WPT18.MAING01",
+        "cdnPack": null,
+        "uri": "ues:UCL-BT[118500965363973101]:UUN.BPMI21WPT18.MAING01/APPBOX-0.1.1[44191602011476724]",
+        "version": "0.1.1",
+        "urlPath": "uun-bpmi21wpt18-maing01",
+        "multitenant": true,
+        "appMetaModel": null,
+        "msgBusses": [],
+        "deploymentTimeConfig": {
+          "asid_license_owner_list": [
+            "1916-8357-1"
+          ],
+          "asid": "607685e335aa9ae56bf83985a313c695",
+          "privilegedUserMap": {
+            "asidOwner": "579-8661-2588-1"
+          },
+          "tid": "118500965363973101",
+          "uuSubAppDataStoreMap": {
+            "primary": "osid:quciptbjmbwz84rohudczlii42cvz73cz"
+          }
+        },
+        "asid": "607685e335aa9ae56bf83985a313c695",
+        "uuEEsMapping": {},
+        "msgBusMapping": {},
+        "deployUnits": [
+          {
+            "code": "UUN.BPMI21WPT18.MAING01/CMD-PACK",
+            "version": "0.1.1",
+            "appCode": "UUN.BPMI21WPT18.MAING01",
+            "urlPath": "uun-bpmi21wpt18-maing01",
+            "uri": "ues:UCL-BT[118500965363973101]:UUN.BPMI21WPT18.MAING01/APPBOX-0.1.1[44191602011476724]:UUN.BPMI21WPT18.MAING01/CMD-PACK",
+            "nodeSetCode": "UUN.BPMI21WPT18.MAING01/CMD-CONTAINER",
+            "stack": "UU.APPG01/APPSERVER_NODEJS_STACK-1.6",
+            "nodeSize": "G1_S",
+            "nodeCount": 1
+          }
+        ],
+        "appBoxUri": "ues:[118500965363973101]:[44191602011476724]",
+        "appBoxCode": "UUN.BPMI21WPT18.MAING01/APPBOX-0.1.1",
+        "portMapping": null
+      },
+      "nodeSets": [
+        {
+          "uri": "ues:[99923616732520257]:[61b0a8bca1342b05db0583d9]",
+          "nodeCount": 1,
+          "code": "UUN_BPMI21WPT18_MAING01_CMD_PACK/UUN_BPMI21WPT18_MAING01_CMD_CONTAINER/UCL_BT/607685e335aa9ae56bf83985a313c695",
+          "allocatedCapacity": {
+            "cpu": 1,
+            "mem": 500,
+            "storage": 1000
+          }
+        }
+      ],
+      "allocatedCapacity": {
+        "cpu": 1,
+        "mem": 500,
+        "storage": 1000
+      },
+      "msgBusses": []
+    }
+  ],
+  "totalSize": 6,
+  "criteria": {
+    "query": "{}",
+    "pageIndex": 0,
+    "pageSize": 1000
+  }
+}

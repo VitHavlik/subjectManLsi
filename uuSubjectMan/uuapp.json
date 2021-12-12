@@ -1,6 +1,6 @@
 {
   "product": "uun_bpmi21wpt18_maing01",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "License Commercial",
   "description": {
     "en": "",
@@ -9,9 +9,13 @@
   "devkit": {
     "development": {
       "appBoxLocationUri": "ues:UCL-BT:OPR.RSP/APPBOXES",
-      "appDeploymentUri": null
+      "uuCloudBaseUri": "https://sys-eu-c-3.plus4u.net",
+      "uuCloudLogStoreBaseUri": "https://cmd-eu-c-3.plus4u.net/118500965363973101/",
+      "appDeploymentUri": "ues:UCL-BT[118500965363973101]:UUN_STUDENTS03_AWE[61797a92a1342b81b8058028]:UUN.BPMI21WPT18.MAING01[61b0a8b7a1342b05db0583d7]"
     }
   },
-  "uu_subject_man-hi": {},
+  "uu_subject_man-hi": {
+    "namespace": "UuSubjectMan"
+  },
   "uu_subject_man-server": {}
 }

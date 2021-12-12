@@ -10,7 +10,9 @@ import Left from "./left";
 import Bottom from "./bottom";
 import Home from "../routes/home";
 
-import StudyProgrammeRoute from "../routes/studyProgramme-route";
+import StudyProgrammeRoute from "../routes/StudyProgramme/studyProgramme-route";
+import StudyProgrammeDetail from "../routes/StudyProgramme/studyProgramme-datail-route"
+import SubjectsRoute from "../routes/Subjects/subjects-route";
 //@@viewOff:imports
 
 const STATICS = {
@@ -28,6 +30,8 @@ const ROUTES = {
   "": DEFAULT_USE_CASE,
   home: { component: <Home /> },
   studyProgrammes: { component: <StudyProgrammeRoute /> },
+  studyProgrammeDetail: {component: <StudyProgrammeDetail />, params: {id: ""}},
+  subjectsList: { component: <SubjectsRoute /> },
   about: { component: <About /> },
   "sys/uuAppWorkspace/initUve": { component: <InitAppWorkspace /> },
   controlPanel: { component: <ControlPanel /> },

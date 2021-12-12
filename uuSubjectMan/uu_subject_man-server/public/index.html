@@ -12,7 +12,7 @@
           var bplSegmentCount = (bplCookie ? Number(bplCookie[2]) : null);
           if (typeof bplSegmentCount !== "number" || isNaN(bplSegmentCount) || bplSegmentCount < 0) bplSegmentCount = 2;
           var appBaseUrlPath = (location.pathname.split(/\//).slice(0,1+bplSegmentCount).join("/")+"/").replace(/\/+/g,"/").replace(/"/g,"");
-          var appAssetsRelativeUrlPath = "public/0.1.0/";
+          var appAssetsRelativeUrlPath = "public/0.1.1/";
           document.write('<base href="' + appBaseUrlPath + appAssetsRelativeUrlPath + '" data-uu-app-base="' + appBaseUrlPath + '" data-uu-app-assets-base="' + appAssetsRelativeUrlPath + '">');
         }
       </script>

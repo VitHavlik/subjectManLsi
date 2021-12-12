@@ -16,6 +16,10 @@ const Lsi = {
     studyProgrammesList:{
       cs: "Studijní programy",
       en: "Study programmes"
+    },
+    subjectsList:{
+      cs: "Seznam předmětů",
+      en: "Subjects list"
     }
   },
 

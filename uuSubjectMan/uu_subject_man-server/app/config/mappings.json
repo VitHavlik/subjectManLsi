@@ -75,6 +75,21 @@
         "realization": "api/controllers/StudyProgrammeController.get",
         "httpMethod": "GET",
         "type": "CMD"
+      },
+      "subject/assignSubject": {
+        "realization": "api/controllers/SubjectController.assignSubject",
+        "httpMethod": "POST",
+        "type": "CMD"
+      },
+      "subject/listByStudyProgramme": {
+        "realization": "api/controllers/SubjectController.listByStudyProgramme",
+        "httpMethod": "GET",
+        "type": "CMD"
+      },
+      "subject/removeSubject": {
+        "realization": "api/controllers/SubjectController.removeSubject",
+        "httpMethod": "POST",
+        "type": "CMD"
       }
     }
   }

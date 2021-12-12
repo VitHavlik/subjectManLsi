@@ -38,11 +38,60 @@ let Calls = {
     return await Calls.getWorkspace();
   },
 
-  async getStudyProgrammes(dtoIn){
+  async listStudyProgrammes(dtoIn){
     let commandUri = Calls.getCommandUri("studyProgramme/list");
     const calledData = await Calls.call("get", commandUri, dtoIn);
     return calledData;
   },
+
+  async getStudyProgramme(dtoIn){
+    let commandUri = Calls.getCommandUri("studyProgramme/get");
+    const calledData = await Calls.call("get", commandUri, dtoIn);
+    return calledData;
+  },
+
+  async createStudyProgramme(dtoIn){
+    let commandUri = Calls.getCommandUri("studyProgramme/create");
+    const calledData = await Calls.call("post", commandUri, dtoIn);
+    return calledData;
+  },
+
+  async updateStudyProgramme(dtoIn){
+    let commandUri = Calls.getCommandUri("studyProgramme/update");
+    const calledData = await Calls.call("post", commandUri, dtoIn);
+    return calledData;
+  },
+
+  async listSubjects(dtoIn){
+    let commandUri = Calls.getCommandUri("subject/list");
+    const calledData = await Calls.call("get", commandUri, dtoIn);
+    return calledData;
+  },
+
+  async listSubjectsByStudyProgramme(dtoIn){
+    let commandUri = Calls.getCommandUri("subject/listByStudyProgramme");
+    const calledData = await Calls.call("get", commandUri, dtoIn);
+    return calledData;
+  },
+
+  async createSubject(dtoIn){
+    let commandUri = Calls.getCommandUri("subject/create");
+    const calledData = await Calls.call("post", commandUri, dtoIn);
+    return calledData;
+  },
+
+  async asignSubject(dtoIn){
+    let commandUri = Calls.getCommandUri("subject/assignSubject");
+    const calledData = await Calls.call("post", commandUri, dtoIn);
+    return calledData;
+  },
+  
+  async removeSubject(dtoIn){
+    let commandUri = Calls.getCommandUri("subject/removeSubject");
+    const calledData = await Calls.call("post", commandUri, dtoIn);
+    return calledData;
+  },
+  
 
   /*
   For calling command on specific server, in case of developing client site with already deployed

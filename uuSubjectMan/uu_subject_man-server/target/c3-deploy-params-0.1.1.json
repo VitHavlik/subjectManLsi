@@ -1,0 +1,17 @@
+{
+  "appBoxUri": "ues:UCL-BT:UUN.BPMI21WPT18.MAING01/APPBOX-0.1.1",
+  "config": {
+    "asid_license_owner_list": [
+      "1916-8357-1"
+    ],
+    "asid": "607685e335aa9ae56bf83985a313c695",
+    "privilegedUserMap": {
+      "asidOwner": "579-8661-2588-1"
+    },
+    "tid": "118500965363973101",
+    "uuSubAppDataStoreMap": {
+      "primary": "osid:quciptbjmbwz84rohudczlii42cvz73cz"
+    }
+  },
+  "asid": "607685e335aa9ae56bf83985a313c695"
+}

@@ -1,0 +1,26 @@
+{
+  "schemaUri": "ues:SYSTEM:UU.OS/UUAPP-DEPLOY-SCHEMA-V2.3",
+  "data": {
+    "code": "UUN.BPMI21WPT18.MAING01",
+    "name": "uunBpmi21wpt18Maing01",
+    "version": "0.1.1",
+    "urlPath": "uun-bpmi21wpt18-maing01",
+    "multitenant": true,
+    "packs": [
+      {
+        "code": "UUN.BPMI21WPT18.MAING01/CMD-PACK",
+        "targetNodeSets": [
+          "UUN.BPMI21WPT18.MAING01/CMD-CONTAINER"
+        ]
+      }
+    ],
+    "nodeSets": [
+      {
+        "code": "UUN.BPMI21WPT18.MAING01/CMD-CONTAINER",
+        "nodeSize": "G1_S",
+        "runtimeStack": "UU.APPG01/APPSERVER_NODEJS_STACK-1.6",
+        "nodeCount": 1
+      }
+    ]
+  }
+}
