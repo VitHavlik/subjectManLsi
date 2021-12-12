@@ -45,6 +45,7 @@ export const SubjectsRoute = createVisualComponent({
                     child = (
                         <>
                         <SubjectsReady data={data} 
+                        handleOpen={handleOpenSubject}
                         handleCreate={handleSubjectCreate}
                         />
                         </>
@@ -81,6 +82,15 @@ export const SubjectsRoute = createVisualComponent({
         const alertBusRef = useRef();
         const modalRef = useRef();
         const unmountedRef = useRef();
+
+        const handleOpenSubject = (data) => {
+            UU5.Environment.setRoute("subjectDetail", { id: data.id });
+
+         //   UU5.Environment.setRoute({
+         //       component: <StudyProgrameDetail />,
+         //       url: { useCase: "studyProgrammeDetail", params: {"id": data.id} }
+         //   });
+        }
 
         const showModal = useCallback((subject, onSave) => {
             const modal = modalRef.current;

@@ -74,6 +74,12 @@ let Calls = {
     return calledData;
   },
 
+  async getSubject(dtoIn){
+    let commandUri = Calls.getCommandUri("subject/get");
+    const calledData = await Calls.call("get", commandUri, dtoIn);
+    return calledData;
+  },
+
   async createSubject(dtoIn){
     let commandUri = Calls.getCommandUri("subject/create");
     const calledData = await Calls.call("post", commandUri, dtoIn);

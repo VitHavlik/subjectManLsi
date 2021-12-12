@@ -13,6 +13,8 @@ import Home from "../routes/home";
 import StudyProgrammeRoute from "../routes/StudyProgramme/studyProgramme-route";
 import StudyProgrammeDetail from "../routes/StudyProgramme/studyProgramme-datail-route"
 import SubjectsRoute from "../routes/Subjects/subjects-route";
+import SubjectsDetailRoute from "../routes/Subjects/subjects-datail-route";
+
 //@@viewOff:imports
 
 const STATICS = {
@@ -32,6 +34,7 @@ const ROUTES = {
   studyProgrammes: { component: <StudyProgrammeRoute /> },
   studyProgrammeDetail: {component: <StudyProgrammeDetail />, params: {id: ""}},
   subjectsList: { component: <SubjectsRoute /> },
+  subjectDetail: { component: <SubjectsDetailRoute /> },
   about: { component: <About /> },
   "sys/uuAppWorkspace/initUve": { component: <InitAppWorkspace /> },
   controlPanel: { component: <ControlPanel /> },

@@ -19,6 +19,7 @@ export const SubjectsReady = createVisualComponent({
     //@@viewOn:propTypes
     propTypes: {
         data: UU5.PropTypes.array,
+        handleOpen: UU5.PropTypes.func,
         handleCreate: UU5.PropTypes.func
     },
     //@@viewOff:propTypes
@@ -26,6 +27,7 @@ export const SubjectsReady = createVisualComponent({
     //@@viewOn:defaultProps
     defaultProps: {
         data: [],
+        handleOpen: () => {},
         handleCreate: () => {}
     },
     //@@viewOff:defaultProps
@@ -52,7 +54,7 @@ export const SubjectsReady = createVisualComponent({
 
         const SUBJECT_COLUMNS = [
             {
-                cell: cellProps => <UU5.Bricks.Lsi lsi={cellProps.data.data.name} />,
+                cell: cellProps => <UU5.Bricks.Link onClick={()=>{props?.handleOpen(cellProps.data.data);}}><UU5.Bricks.Lsi lsi={cellProps.data.data.name} /></UU5.Bricks.Link>,
                 header: <UU5.Bricks.Lsi lsi={{ en: "Species", cs: "Název" }} />
             },
             {
