@@ -14,6 +14,16 @@ const WARNINGS = {
   },
 };
 
+//generates random id;
+function guid() {
+  let s4 = () => {
+    return Math.floor(((1 + Math.random()) * 0x10000) + Date.now())
+      .toString(16)
+      .substring(1);
+  }
+  return s4() + s4() + s4();
+}
+
 class TopicAbl {
 
   constructor() {
@@ -33,8 +43,8 @@ class TopicAbl {
     dtoIn.awid = awid
     dtoIn.uuIdentity = session.getIdentity().getUuIdentity();
     dtoIn.uuIdentityName = session.getIdentity().getName();
-    dtoIn.digitalContent = [];
     dtoIn.state = "init";
+    dtoIn.digitalContents = [];
     // HDS 4
     try {
       dtoOut = await this.dao.create(dtoIn)
@@ -114,6 +124,95 @@ class TopicAbl {
     // HDS 5
     dtoOut.uuAppErrorMap = uuAppErrorMap;
     return dtoOut;
+  }
+
+
+  async digitalContentAdd(awid, dtoIn) {
+    // HDS 1
+    let validationResult = this.validator.validate("digitalContentAdd", dtoIn);
+    // HDS 1.2, 1.3 A 1.2.1, A. 1.3.1
+    let uuAppErrorMap = ValidationHelper.processValidationResult(dtoIn, validationResult,
+      WARNINGS.createUnsupportedKeys.code, Errors.DigitalContentAdd.InvalidDtoIn);
+
+    let readTopic;
+
+    try {
+      readTopic = await this.dao.get(dtoIn.id);
+    }
+    catch (err) {
+      if (err instanceof ObjectStoreError) {
+        throw new Errors.DigitalContentAdd.TopicGetFailed({ uuAppErrorMap }, err);
+      }
+      return err
+    }
+
+    if (!readTopic)
+      throw new Errors.DigitalContentAdd.TopicDontExist({ uuAppErrorMap });
+
+    readTopic.digitalContents.push({
+      id: guid(),
+      name: dtoIn.name,
+      link: dtoIn.link,
+      type: dtoIn.type
+    });
+
+    let dtoOut
+    try {
+      dtoOut = await this.dao.update(readTopic)
+    }
+    catch (err) {
+      if (err instanceof ObjectStoreError) {
+        throw new Errors.DigitalContentAdd.TopicDaoUpdateFailed({ uuAppErrorMap }, err);
+      }
+      return err
+    }
+    // HDS 5
+    dtoOut.uuAppErrorMap = uuAppErrorMap
+    return dtoOut
+  }
+
+  async digitalContentRemove(awid, dtoIn) {
+    // HDS 1
+    let validationResult = this.validator.validate("digitalContentRemove", dtoIn);
+    // HDS 1.2, 1.3 A 1.2.1, A. 1.3.1
+    let uuAppErrorMap = ValidationHelper.processValidationResult(dtoIn, validationResult,
+      WARNINGS.createUnsupportedKeys.code, Errors.DigitalContentRemove.InvalidDtoIn);
+
+    let readTopic;
+
+    try {
+      readTopic = await this.dao.get(dtoIn.id);
+    }
+    catch (err) {
+      if (err instanceof ObjectStoreError) {
+        throw new Errors.DigitalContentRemove.TopicGetFailed({ uuAppErrorMap }, err);
+      }
+      return err
+    }
+
+    if (!readTopic)
+      throw new Errors.DigitalContentRemove.TopicDontExist({ uuAppErrorMap });
+
+    const foundIndex = readTopic.digitalContents.findIndex(element => element.id === dtoIn.digitalContentId);
+
+    if (foundIndex < 0)
+      throw new Errors.DigitalContentRemove.DigitalContentDontExist({ uuAppErrorMap });
+
+    readTopic.digitalContents.splice(foundIndex, 1);
+
+    let dtoOut
+    try {
+      dtoOut = await this.dao.update(readTopic);
+    }
+    catch (err) {
+      if (err instanceof ObjectStoreError) {
+        throw new Errors.DigitalContentRemove.TopicDaoUpdateFailed({ uuAppErrorMap }, err);
+      }
+      return err
+    }
+    // HDS 5
+    dtoOut.uuAppErrorMap = uuAppErrorMap
+    return dtoOut
   }
 
 

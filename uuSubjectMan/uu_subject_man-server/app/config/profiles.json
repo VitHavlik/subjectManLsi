@@ -76,6 +76,14 @@
       "subject/removeSubject": {
         "sysStateList": ["active"],
         "profileList": ["Public"]
+      },
+      "topic/digitalContentAdd": {
+        "sysStateList": ["active"],
+        "profileList": ["Public"]
+      },
+      "topic/digitalContentRemove": {
+        "sysStateList": ["active"],
+        "profileList": ["Public"]
       }
     }
   }

@@ -72,7 +72,7 @@ const SubjectsSelectModal = createVisualComponentWithRef({
                   }
                 </UU5.Forms.Select>
                 <UU5.Forms.Number
-                  label={<UU5.Bricks.Lsi lsi={Lsi.form.credits} />}
+                  label={<UU5.Bricks.Lsi lsi={Lsi.form.semester} />}
                   name="semester"
                   value={0}
                   min={0}

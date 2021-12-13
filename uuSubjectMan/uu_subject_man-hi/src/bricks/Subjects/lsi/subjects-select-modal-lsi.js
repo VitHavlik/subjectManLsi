@@ -11,6 +11,10 @@ export default {
         subjects:{
             cs: "Předměty",
             en: "Subjects"
+        },
+        semester:{
+            cs: "Semestr",
+            en: "Sememster"
         }
     },
     submit: {

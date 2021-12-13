@@ -8,6 +8,7 @@ import Config from "../config/config";
 import SubjectsDetailReady from "../../core/Subjects/subjects-detail-ready"
 
 import Lsi from "./lsi/subjects-detail-route-lsi";
+import TopicsInSubjectList from "../../core/Subjects/topicsInSubject-list";
 //@@viewOff:imports
 
 const STATICS = {
@@ -45,9 +46,11 @@ export const SubjectsDetailRoute = createVisualComponent({
                 case "readyNoData":
                     child = (
                         <>
-                            <SubjectsDetailReady 
-                            data={data} 
+                            <SubjectsDetailReady
+                                data={data}
                             />
+                            <TopicsInSubjectList
+                                subjectId={props.params.id} />
                         </>
                     )
                     break;

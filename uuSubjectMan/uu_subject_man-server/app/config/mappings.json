@@ -90,6 +90,16 @@
         "realization": "api/controllers/SubjectController.removeSubject",
         "httpMethod": "POST",
         "type": "CMD"
+      },
+      "topic/digitalContentAdd": {
+        "realization": "api/controllers/TopicController.digitalContentAdd",
+        "httpMethod": "POST",
+        "type": "CMD"
+      },
+      "topic/digitalContentRemove": {
+        "realization": "api/controllers/TopicController.digitalContentRemove",
+        "httpMethod": "POST",
+        "type": "CMD"
       }
     }
   }

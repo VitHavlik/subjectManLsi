@@ -97,8 +97,31 @@ let Calls = {
     const calledData = await Calls.call("post", commandUri, dtoIn);
     return calledData;
   },
+
+  async listTopicsInSubject(dtoIn){
+    let commandUri = Calls.getCommandUri("topic/list");
+    const calledData = await Calls.call("get", commandUri, dtoIn);
+    return calledData;
+  },
+
+  async addTopic(dtoIn){
+    let commandUri = Calls.getCommandUri("topic/create");
+    const calledData = await Calls.call("post", commandUri, dtoIn);
+    return calledData;
+  },
   
 
+  async addDigitalContent(dtoIn){
+    let commandUri = Calls.getCommandUri("topic/digitalContentAdd");
+    const calledData = await Calls.call("post", commandUri, dtoIn);
+    return calledData;
+  },
+  
+  async removeDigitalContent(dtoIn){
+    let commandUri = Calls.getCommandUri("topic/digitalContentRemove");
+    const calledData = await Calls.call("post", commandUri, dtoIn);
+    return calledData;
+  },
   /*
   For calling command on specific server, in case of developing client site with already deployed
   server in uuCloud etc. You can specify url of this application (or part of url) in development

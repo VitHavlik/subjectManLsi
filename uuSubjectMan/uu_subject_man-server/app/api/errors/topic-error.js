@@ -88,7 +88,80 @@ const Remove = {
   }
 };
 
+const DigitalContentAdd = {
+  UC_CODE: `${TOPIC_ERROR_PREFIX}digitalContentAdd/`,
+  InvalidDtoIn: class extends SubjectManUseCaseError {
+    constructor() {
+      super(...arguments);
+      this.code = `${Create.UC_CODE}invalidDtoIn`;
+      this.message = "DtoIn is not valid.";
+    }
+  },
+  TopicGetFailed: class extends SubjectManUseCaseError {
+    constructor() {
+      super(...arguments);
+      this.code = `${Create.UC_CODE}topicDaoGetFailed`;
+      this.message = "Topic get by topic Dao get failed.";
+    }
+  },
+  TopicDontExist: class extends SubjectManUseCaseError {
+    constructor() {
+      super(...arguments);
+      this.code = `${Create.UC_CODE}topicDontExist`;
+      this.message = "Searched topic do not exist.";
+    }
+  },
+  TopicDaoUpdateFailed: class extends SubjectManUseCaseError {
+    constructor() {
+      super(...arguments);
+      this.code = `${Create.UC_CODE}topicDaoUpdateFailed`;
+      this.message = "Update topic by topic Dao update failed.";
+    }
+  }
+};
+
+const DigitalContentRemove = {
+  UC_CODE: `${TOPIC_ERROR_PREFIX}digitalContentRemove/`,
+  InvalidDtoIn: class extends SubjectManUseCaseError {
+    constructor() {
+      super(...arguments);
+      this.code = `${Create.UC_CODE}invalidDtoIn`;
+      this.message = "DtoIn is not valid.";
+    }
+  },
+  TopicGetFailed: class extends SubjectManUseCaseError {
+    constructor() {
+      super(...arguments);
+      this.code = `${Create.UC_CODE}topicDaoGetFailed`;
+      this.message = "Topic get by topic Dao get failed.";
+    }
+  },
+  TopicDontExist: class extends SubjectManUseCaseError {
+    constructor() {
+      super(...arguments);
+      this.code = `${Create.UC_CODE}topicDontExist`;
+      this.message = "Searched topic do not exist.";
+    }
+  },
+  TopicDaoUpdateFailed: class extends SubjectManUseCaseError {
+    constructor() {
+      super(...arguments);
+      this.code = `${Create.UC_CODE}topicDaoUpdateFailed`;
+      this.message = "Update topic by topic Dao update failed.";
+    }
+  },
+  DigitalContentDontExist: class extends SubjectManUseCaseError {
+    constructor() {
+      super(...arguments);
+      this.code = `${Create.UC_CODE}digitalContentDontExist`;
+      this.message = "Searched digital content dont exist.";
+    }
+  }
+};
+
 module.exports = {
+  DigitalContentRemove,
+  DigitalContentAdd,
   Update,
   Remove,
   List,

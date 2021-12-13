@@ -3,6 +3,14 @@ const TopicAbl = require("../../abl/topic-abl.js");
 
 class TopicController {
 
+  digitalContentRemove(ucEnv) {
+    return TopicAbl.digitalContentRemove(ucEnv.getUri().getAwid(), ucEnv.getDtoIn());
+  }
+
+  digitalContentAdd(ucEnv) {
+    return TopicAbl.digitalContentAdd(ucEnv.getUri().getAwid(), ucEnv.getDtoIn());
+  }
+
   update(ucEnv) {
     return TopicAbl.update(ucEnv.getUri().getAwid(), ucEnv.getDtoIn());
   }
