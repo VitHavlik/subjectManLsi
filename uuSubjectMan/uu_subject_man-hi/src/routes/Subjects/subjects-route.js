@@ -3,7 +3,7 @@ import UU5 from "uu5g04";
 import "uu5g04-bricks";
 import { createVisualComponent, useDataList, useRef, useUnmountedRef, useCallback } from "uu5g04-hooks";
 import Calls from "../../calls";
-import SubjectsReady from "../../core/Subjects/subjects-ready";
+import SubjectsListReady from "../../core/Subjects/subjectsList-ready";
 import Config from "../config/config";
 
 import SubjectsCreateModal from "../../bricks/Subjects/subjects-create-modal"
@@ -44,7 +44,7 @@ export const SubjectsRoute = createVisualComponent({
                 case "readyNoData":
                     child = (
                         <>
-                        <SubjectsReady data={data} 
+                        <SubjectsListReady data={data} 
                         handleOpen={handleOpenSubject}
                         handleCreate={handleSubjectCreate}
                         />

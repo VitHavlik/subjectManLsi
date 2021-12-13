@@ -3,9 +3,9 @@ const subjectCreateDtoInType = shape({
     name: uu5String(200).isRequired(),
     description: uu5String(5000),
     goal: uu5String(5000).isRequired(),
-    credits: number(Infinity).isRequired(),
+    credits: integer(1,1000).isRequired(),
     language: oneOf(["CZ", "EN"]).isRequired(),
-    guarantor: array().isRequired(),
+    guarantor: uu5String(100).isRequired(),
     teachers: array().isRequired()
 });
 
@@ -22,9 +22,9 @@ const subjectUpdateDtoInType = shape({
     name: uu5String(200).isRequired(),
     description: uu5String(5000),
     goal: uu5String(5000).isRequired(),
-    credits: number(Infinity).isRequired(),
+    credits: integer(1,1000).isRequired(),
     language: oneOf(["CZ", "EN"]).isRequired(),
-    guarantor: array().isRequired(),
+    guarantor: uu5String(200).isRequired(),
     teachers: array().isRequired()
 });
 

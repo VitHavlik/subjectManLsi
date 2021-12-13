@@ -3,7 +3,7 @@ const studyProgrammeCreateDtoInType = shape({
     name: string(100).isRequired(),
     description: string(1000),
     degree: oneOf(["bachelor", "magister"]).isRequired(),
-    credits: number(Infinity).isRequired(),
+    credits: integer(1,1000).isRequired(),
     languages: oneOf(["CZ", "EN"]).isRequired(),
     forms: oneOf(["full-time", "part-time", "online"]).isRequired(),
 });

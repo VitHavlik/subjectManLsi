@@ -31,7 +31,6 @@ class StudyProgrammeAbl {
     dtoIn.uuIdentity = session.getIdentity().getUuIdentity();
     dtoIn.uuIdentityName = session.getIdentity().getName();
     dtoIn.state = "init";
-    // HDS 4
     try {
       dtoOut = await this.dao.create(dtoIn)
     }
@@ -41,7 +40,7 @@ class StudyProgrammeAbl {
       }
       return err
     }
-    // HDS 5
+    // HDS 4
     dtoOut.uuAppErrorMap = uuAppErrorMap
     return dtoOut
   }
