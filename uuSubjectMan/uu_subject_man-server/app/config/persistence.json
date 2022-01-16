@@ -12,6 +12,9 @@
         },
         "studyProgramme": {
           "realization": "dao/StudyProgrammeMongo"
+        },
+        "subjectMan": {
+          "realization": "dao/subjectManMongo"
         }
       }
     }

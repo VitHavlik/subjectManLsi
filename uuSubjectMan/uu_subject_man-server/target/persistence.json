@@ -14,6 +14,9 @@
         "studyProgramme": {
           "realization": "dao/StudyProgrammeMongo"
         },
+        "subjectMan": {
+          "realization": "dao/subjectManMongo"
+        },
         "sysAuditLogRecord": {
           "realization": "uu_appg01_auditlog:dao/SysAuditLogRecordMongo"
         },
