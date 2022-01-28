@@ -1,5 +1,5 @@
 const { TestHelper } = require("uu_appg01_server-test");
-const USE_CASE = "studyProgramme/create"
+const USE_CASE = "studyProgramme/create";
 
 beforeAll(async () => {
   await TestHelper.setup();
@@ -7,9 +7,9 @@ beforeAll(async () => {
   await TestHelper.createUuAppWorkspace();
 });
 beforeEach(async () => {
-    //Turned off auth, profiles are not set up yet
-    await TestHelper.setup({ authEnabled: false, sysStatesEnabled: false });
-  });
+  //Turned off auth, profiles are not set up yet
+  await TestHelper.setup({ authEnabled: false, sysStatesEnabled: false });
+});
 
 afterAll(async () => {
   await TestHelper.teardown();
@@ -17,95 +17,84 @@ afterAll(async () => {
 
 describe("Testing studyProgramme/create", () => {
   test("studyProgramme/create - HDS", async () => {
-    expect.assertions(9)
+    expect.assertions(9);
 
     let dtoIn = {
-        name: "Softwarový vývoj 2",
-        description: "-",
-        degree: "bachelor",
-        credits: 180,
-        languages: "CZ",
-        forms: "part-time"
-      };
+      name: "Softwarový vývoj 2",
+      description: "-",
+      degree: "bachelor",
+      credits: 180,
+      languages: "CZ",
+      forms: "part-time",
+    };
     let result = await TestHelper.executePostCommand("studyProgramme/create", dtoIn);
 
     expect(result.status).toEqual(200);
     expect(result.uuAppErrorMap).toEqual({});
     expect(result.awid).toEqual(TestHelper.getAwid());
 
-    expect(result.description).toEqual(dtoIn.description)
-    expect(result.name).toEqual(dtoIn.name)
-    expect(result.degree).toEqual(dtoIn.degree)
-    expect(result.credits).toEqual(dtoIn.credits)
-    expect(result.language).toEqual(dtoIn.language)
-    expect(result.forms).toEqual(dtoIn.forms)
-
+    expect(result.description).toEqual(dtoIn.description);
+    expect(result.name).toEqual(dtoIn.name);
+    expect(result.degree).toEqual(dtoIn.degree);
+    expect(result.credits).toEqual(dtoIn.credits);
+    expect(result.language).toEqual(dtoIn.language);
+    expect(result.forms).toEqual(dtoIn.forms);
   });
   test("studyProgramme/create - Warning 2.2.1", async () => {
-    expect.assertions(9)
+    expect.assertions(9);
 
     let dtoIn = {
-        name: "Softwarový vývoj 2",
-        description: "-",
-        degree: "bachelor",
-        credits: 180,
-        languages: "CZ",
-        forms: "part-time",
-        unsupportedKey: "Ve středu bude pršet"
-      };
+      name: "Softwarový vývoj 2",
+      description: "-",
+      degree: "bachelor",
+      credits: 180,
+      languages: "CZ",
+      forms: "part-time",
+      unsupportedKey: "Ve středu bude pršet",
+    };
     let result = await TestHelper.executePostCommand("studyProgramme/create", dtoIn);
 
     expect(result.status).toEqual(200);
     expect(result.awid).toEqual(TestHelper.getAwid());
 
-    expect(result.description).toEqual(dtoIn.description)
-    expect(result.name).toEqual(dtoIn.name)
-    expect(result.degree).toEqual(dtoIn.degree)
-    expect(result.credits).toEqual(dtoIn.credits)
-    expect(result.language).toEqual(dtoIn.language)
-    expect(result.forms).toEqual(dtoIn.forms)
+    expect(result.description).toEqual(dtoIn.description);
+    expect(result.name).toEqual(dtoIn.name);
+    expect(result.degree).toEqual(dtoIn.degree);
+    expect(result.credits).toEqual(dtoIn.credits);
+    expect(result.language).toEqual(dtoIn.language);
+    expect(result.forms).toEqual(dtoIn.forms);
 
     expect(result.uuAppErrorMap).toEqual(
-        expect.objectContaining({
-            "uu-subject-man/studyProgramme/create/unsupportedKeys": expect.objectContaining({
-                "type": expect.stringContaining("warning"),
-                "message": expect.stringContaining("DtoIn contains unsupported keys."),
-                "paramMap": expect.objectContaining({
-                    "unsupportedKeyList": expect.arrayContaining([
-                        "$.unsupportedKey"
-                    ])
-                }) 
-            }) 
-        })
-    )
-
+      expect.objectContaining({
+        "uu-subject-man/studyProgramme/create/unsupportedKeys": expect.objectContaining({
+          type: expect.stringContaining("warning"),
+          message: expect.stringContaining("DtoIn contains unsupported keys."),
+          paramMap: expect.objectContaining({
+            unsupportedKeyList: expect.arrayContaining(["$.unsupportedKey"]),
+          }),
+        }),
+      })
+    );
   });
 
   test("studyProgramme/create - Error 1.3.1", async () => {
-    expect.assertions(3)
+    expect.assertions(3);
 
     let dtoIn = {
-        name: "studyProgrammeName", 
-           description: "description",
-           goal: "goal", 
-           credits: 2, 
-           language: 3, 
-           guarantor: "Marek Beránek",
-           teachers: ["Pepa Tronek"],
-           
-    
+      name: "studyProgrammeName",
+      description: "description",
+      goal: "goal",
+      credits: 2,
+      language: 3,
+      guarantor: "Marek Beránek",
+      teachers: ["Pepa Tronek"],
     };
-    try{
-        await TestHelper.executePostCommand("studyProgramme/create", dtoIn);
+    try {
+      await TestHelper.executePostCommand("studyProgramme/create", dtoIn);
+    } catch (error) {
+      expect(error.status).toEqual(400);
+      expect(error.code).toEqual(`uu-subject-man/studyProgramme/create/invalidDtoIn`);
+      expect(error.message).toEqual(`DtoIn is not valid.`);
     }
-    catch(error){
-
-        expect(error.status).toEqual(400)
-        expect(error.code).toEqual(`uu-subject-man/studyProgramme/create/invalidDtoIn`)
-        expect(error.message).toEqual(`DtoIn is not valid.`)
-    }
-    
-
-
   });
 });

@@ -1,5 +1,5 @@
 const { TestHelper } = require("uu_appg01_server-test");
-const USE_CASE = "topic/create";
+const USE_CASE = "topic/digitalContentAdd";
 
 beforeAll(async () => {
   await TestHelper.setup();
@@ -15,8 +15,8 @@ afterAll(async () => {
   await TestHelper.teardown();
 });
 
-describe("Testing topic/update", () => {
-  test("topic/update - HDS", async () => {
+describe(`Testing ${USE_CASE}`, () => {
+  test(`${USE_CASE} - HDS`, async () => {
     expect.assertions(6);
 
     let dtoIn = {
@@ -38,22 +38,21 @@ describe("Testing topic/update", () => {
     result = await TestHelper.executePostCommand("topic/create", dtoIn);
     dtoIn = {
       id: result.id,
-      name: "TestTopic1asdwd",
-      description: "ssss",
+      name: "New digital content",
+      link: "dawdasdwa",
+      type: "video",
     };
-
-    result = await TestHelper.executePostCommand("topic/update", dtoIn);
+    result = await TestHelper.executePostCommand("topic/digitalContentAdd", dtoIn);
 
     expect(result.status).toEqual(200);
     expect(result.uuAppErrorMap).toEqual({});
     expect(result.awid).toEqual(TestHelper.getAwid());
 
-    expect(result.description).toEqual(dtoIn.description);
-    expect(result.name).toEqual(dtoIn.name);
-
-    expect(result.digitalContents).toBeDefined();
+    expect(result.digitalContents[0].name).toEqual(dtoIn.name);
+    expect(result.digitalContents[0].link).toEqual(dtoIn.link);
+    expect(result.digitalContents[0].type).toEqual(dtoIn.type);
   });
-  test("topic/update - Warning 2.2.1 ", async () => {
+  test(`${USE_CASE} - Warning`, async () => {
     expect.assertions(6);
 
     let dtoIn = {
@@ -71,25 +70,26 @@ describe("Testing topic/update", () => {
       subjectId: result.id,
       name: "TestTopic1",
       description: "ssss",
-    };
-    result = await TestHelper.executePostCommand("topic/create", dtoIn);
-    dtoIn = {
-      id: result.id,
-      name: "TestTopic1asdwd",
-      description: "ssss",
       unsupportedKey: "Ve středu bude pršet",
     };
+    result = await TestHelper.executePostCommand("topic/create", dtoIn);
 
-    result = await TestHelper.executePostCommand("topic/update", dtoIn);
-
+    dtoIn = {
+      id: result.id,
+      name: "New digital content",
+      link: "dawdasdwa",
+      type: "video",
+      unsupportedKey: "Ve středu bude pršet",
+    };
+    result = await TestHelper.executePostCommand("topic/digitalContentAdd", dtoIn);
     expect(result.status).toEqual(200);
 
     expect(result.awid).toEqual(TestHelper.getAwid());
 
-    expect(result.description).toEqual(dtoIn.description);
-    expect(result.name).toEqual(dtoIn.name);
+    expect(result.digitalContents[0].name).toEqual(dtoIn.name);
+    expect(result.digitalContents[0].link).toEqual(dtoIn.link);
+    expect(result.digitalContents[0].type).toEqual(dtoIn.type);
 
-    expect(result.digitalContents).toBeDefined();
     expect(result.uuAppErrorMap).toEqual(
       expect.objectContaining({
         "uu-subject-man/topic/create/unsupportedKeys": expect.objectContaining({
@@ -102,7 +102,7 @@ describe("Testing topic/update", () => {
       })
     );
   });
-  test("topic/update - Error 1.3.1", async () => {
+  test(`${USE_CASE} - Error`, async () => {
     expect.assertions(3);
 
     let dtoIn = {
@@ -120,19 +120,60 @@ describe("Testing topic/update", () => {
       subjectId: result.id,
       name: "TestTopic1",
       description: "ssss",
+      unsupportedKey: "Ve středu bude pršet",
     };
     result = await TestHelper.executePostCommand("topic/create", dtoIn);
+
     dtoIn = {
       id: result.id,
-      name: 123,
-      description: "ssss",
+      name: "New digital content",
+      link: "dawdasdwa",
+      type: "vid",
     };
+
     try {
-      result = await TestHelper.executePostCommand("topic/update", dtoIn);
+      await TestHelper.executePostCommand("topic/digitalContentAdd", dtoIn);
     } catch (error) {
       expect(error.status).toEqual(400);
       expect(error.code).toEqual(`uu-subject-man/topic/create/invalidDtoIn`);
       expect(error.message).toEqual(`DtoIn is not valid.`);
+    }
+  });
+  test(`${USE_CASE} - Error no topic`, async () => {
+    expect.assertions(3);
+
+    let dtoIn = {
+      name: "subjectName",
+      description: "description",
+      goal: "goal",
+      credits: 2,
+      language: "CZ",
+      guarantor: "Marek Beránek",
+      teachers: ["Pepa Tronek"],
+    };
+    let result = await TestHelper.executePostCommand("subject/create", dtoIn);
+
+    dtoIn = {
+      subjectId: result.id,
+      name: "TestTopic1",
+      description: "ssss",
+      unsupportedKey: "Ve středu bude pršet",
+    };
+    result = await TestHelper.executePostCommand("topic/create", dtoIn);
+
+    dtoIn = {
+      id: "",
+      name: "New digital content",
+      link: "dawdasdwa",
+      type: "video",
+    };
+
+    try {
+      await TestHelper.executePostCommand("topic/digitalContentAdd", dtoIn);
+    } catch (error) {
+      expect(error.status).toEqual(400);
+      expect(error.code).toEqual(`uu-subject-man/topic/create/topicDontExist`);
+      expect(error.message).toEqual(`Searched topic do not exist.`);
     }
   });
 });
