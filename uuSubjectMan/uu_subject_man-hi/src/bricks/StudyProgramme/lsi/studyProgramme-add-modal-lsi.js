@@ -38,7 +38,7 @@ export default {
                 en:"Part time"
             },
             cs:"Forma vyučování",
-            en:"Form"
+            en:"Study form"
         },
         languages:{
             czech:{
@@ -53,12 +53,12 @@ export default {
             en:"Language"
         },
         credits:{
-            cs:"Počet kreditů za celé studium",
-            en:"Credist per studium"
+            cs:"Počet kreditů pro splnění",
+            en:"Credits per study"
         }
     },
     submit: {
-        cs: "Přidej",
+        cs: "Přidat",
         en: "Add",
     }
 };

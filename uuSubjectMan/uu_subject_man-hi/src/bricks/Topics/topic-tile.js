@@ -92,7 +92,7 @@ export const TopicTile = createVisualComponent({
                             props.data.data?.digitalContents?.map((elemnt) => (
                                 <UU5.BlockLayout.Row>
                                     <UU5.BlockLayout.Column width={200}>{elemnt.name}</UU5.BlockLayout.Column>
-                                    <UU5.BlockLayout.Column width={200}><UU5.Bricks.Link href={elemnt.link} target="_blank">odkaz</UU5.Bricks.Link></UU5.BlockLayout.Column>
+                                    <UU5.BlockLayout.Column width={200}><UU5.Bricks.Link href={elemnt.link} target="_blank"><UU5.Bricks.Lsi lsi = {Lsi.tile.link} /></UU5.Bricks.Link></UU5.BlockLayout.Column>
                                     {
                                         () => {
                                             if (elemnt.type === "video")
@@ -145,7 +145,7 @@ export const TopicTile = createVisualComponent({
                                                 return <UU5.Bricks.Icon icon="plus4u5-close" />
                                         }
                                     }
-                                    <UU5.BlockLayout.Column width={150}><UU5.Bricks.Button onClick={()=>{props?.handleDigitalContentRemove(props.data, elemnt.id)}}>Odstraň</UU5.Bricks.Button></UU5.BlockLayout.Column>
+                                    <UU5.BlockLayout.Column width={150}><UU5.Bricks.Button onClick={()=>{props?.handleDigitalContentRemove(props.data, elemnt.id)}}><UU5.Bricks.Lsi lsi = {Lsi.tile.delete} /></UU5.Bricks.Button></UU5.BlockLayout.Column>
                                 </UU5.BlockLayout.Row>
                             ))
                         }

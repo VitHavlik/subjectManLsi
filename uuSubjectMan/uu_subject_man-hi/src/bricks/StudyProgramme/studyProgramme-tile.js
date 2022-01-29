@@ -48,8 +48,8 @@ export const StudyProgrammeTile = createVisualComponent({
                 <UU5.BlockLayout.Row>
                     <UU5.BlockLayout.Text>
                         <UU5.Bricks.Row>
-                            <UU5.Bricks.Column colWidth="xs-4">{attribute}</UU5.Bricks.Column>
-                            <UU5.Bricks.Column colWidth="xs-8">{content}</UU5.Bricks.Column>
+                            <UU5.Bricks.Column colWidth="xs-6">{attribute}</UU5.Bricks.Column>
+                            <UU5.Bricks.Column colWidth="xs-6">{content}</UU5.Bricks.Column>
                         </UU5.Bricks.Row>
                     </UU5.BlockLayout.Text>
                 </UU5.BlockLayout.Row>
@@ -86,44 +86,44 @@ export const StudyProgrammeTile = createVisualComponent({
                     <UU5.BlockLayout.Block>
                         <UU5.BlockLayout.Row>
                             <UU5.Bricks.Row>
-                                <UU5.Bricks.Column colWidth="xs-4"><UU5.Bricks.Lsi lsi={Lsi.tile.name} /></UU5.Bricks.Column>
-                                <UU5.Bricks.Column colWidth="xs-8">{props.data.data?.name}</UU5.Bricks.Column>
+                                <UU5.Bricks.Column colWidth="xs-6"><UU5.Bricks.Lsi lsi={Lsi.tile.name} /></UU5.Bricks.Column>
+                                <UU5.Bricks.Column colWidth="xs-6">{props.data.data?.name}</UU5.Bricks.Column>
                             </UU5.Bricks.Row>
                         </UU5.BlockLayout.Row>
 
                         <UU5.BlockLayout.Row>
                             <UU5.Bricks.Row>
-                                <UU5.Bricks.Column colWidth="xs-4"><UU5.Bricks.Lsi lsi={Lsi.tile.description} /></UU5.Bricks.Column>
-                                <UU5.Bricks.Column colWidth="xs-8">{props.data.data?.description}</UU5.Bricks.Column>
+                                <UU5.Bricks.Column colWidth="xs-6"><UU5.Bricks.Lsi lsi={Lsi.tile.description} /></UU5.Bricks.Column>
+                                <UU5.Bricks.Column colWidth="xs-6">{props.data.data?.description}</UU5.Bricks.Column>
                             </UU5.Bricks.Row>
                         </UU5.BlockLayout.Row>
 
                         <UU5.BlockLayout.Row>
                             <UU5.Bricks.Row>
-                                <UU5.Bricks.Column colWidth="xs-4"><UU5.Bricks.Lsi lsi={Lsi.tile.form} /></UU5.Bricks.Column>
-                                <UU5.Bricks.Column colWidth="xs-8">{props.data.data?.forms}</UU5.Bricks.Column>
+                                <UU5.Bricks.Column colWidth="xs-6"><UU5.Bricks.Lsi lsi={Lsi.tile.form} /></UU5.Bricks.Column>
+                                <UU5.Bricks.Column colWidth="xs-6">{props.data.data?.forms}</UU5.Bricks.Column>
                             </UU5.Bricks.Row>
                         </UU5.BlockLayout.Row>
 
                         <UU5.BlockLayout.Row>
                             <UU5.Bricks.Row>
-                                <UU5.Bricks.Column colWidth="xs-4"><UU5.Bricks.Lsi lsi={Lsi.tile.language} /> </UU5.Bricks.Column>
-                                <UU5.Bricks.Column colWidth="xs-8">{props.data.data?.languages}</UU5.Bricks.Column>
+                                <UU5.Bricks.Column colWidth="xs-6"><UU5.Bricks.Lsi lsi={Lsi.tile.language} /> </UU5.Bricks.Column>
+                                <UU5.Bricks.Column colWidth="xs-6">{props.data.data?.languages}</UU5.Bricks.Column>
                             </UU5.Bricks.Row>
                         </UU5.BlockLayout.Row>
 
                         <UU5.BlockLayout.Row>
                             <UU5.Bricks.Row>
-                                <UU5.Bricks.Column colWidth="xs-4"><UU5.Bricks.Lsi lsi={Lsi.tile.degree} /> </UU5.Bricks.Column>
-                                <UU5.Bricks.Column colWidth="xs-8">{props.data.data?.degree}</UU5.Bricks.Column>
+                                <UU5.Bricks.Column colWidth="xs-6"><UU5.Bricks.Lsi lsi={Lsi.tile.degree} /> </UU5.Bricks.Column>
+                                <UU5.Bricks.Column colWidth="xs-6">{props.data.data?.degree}</UU5.Bricks.Column>
                             </UU5.Bricks.Row>
                         </UU5.BlockLayout.Row>
 
                         <UU5.BlockLayout.Row>
                             <UU5.Bricks.Row>
-                                <UU5.Bricks.Column colWidth="xs-4"><UU5.Bricks.Lsi lsi={Lsi.tile.created} /></UU5.Bricks.Column>
-
-                                <UU5.Bricks.Column colWidth="xs-8">
+                                <UU5.Bricks.Column colWidth="xs-6"><UU5.Bricks.Lsi lsi={Lsi.tile.created} /></UU5.Bricks.Column>
+                                
+                                <UU5.Bricks.Column colWidth="xs-6">
                                 <UU5.Bricks.DateTime
                                         timeZone={UU5.Environment.dateTimeZone}
                                         value={props.data.data?.sys.cts}

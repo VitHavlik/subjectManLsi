@@ -9,7 +9,8 @@ export default {
     },
     modal: {
         header: {
-            creation: {
+            topic:{
+                      creation: {
                 cs: "Vytvoření tématu",
                 en: "Creation of topic"
             },
@@ -17,6 +18,18 @@ export default {
                 cs: "Editace tématu",
                 en: "Edit of topic"
             }
+            },
+            digitalContent:{
+                creation: {
+          cs: "Vytvoření digitálního obsahu",
+          en: "Creation of digital content"
+      },
+      edit: {
+          cs: "Editace tématu",
+          en: "Edit of topic"
+      }
+      },
+      
         },
         onSaveDone:{
             creation:{

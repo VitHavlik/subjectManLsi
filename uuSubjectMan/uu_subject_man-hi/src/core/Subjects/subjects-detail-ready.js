@@ -4,6 +4,7 @@ import "uu5g04-bricks";
 import Uu5Tiles from "uu5tilesg02";
 import { createVisualComponent, useRef } from "uu5g04-hooks";
 import Config from "../config/config";
+import Lsi from "./lsi/subjectDetail.lsi"
 
 import Css from "./subjects-detail-css"
 
@@ -61,34 +62,34 @@ export const SubjectsDetailReady = createVisualComponent({
                     <UU5.Bricks.Section header={props.data?.name} underline={true} level={2}>
                         <UU5.BlockLayout.Block>
                             <UU5.BlockLayout.Row>
-                                <UU5.BlockLayout.Column width={300}>Name</UU5.BlockLayout.Column>
+                                <UU5.BlockLayout.Column width={300}><UU5.Bricks.Lsi lsi = {Lsi.description.name} /></UU5.BlockLayout.Column>
                                 <UU5.BlockLayout.Column textAlign={"left"}>{props.data.name}</UU5.BlockLayout.Column>
                            </UU5.BlockLayout.Row>
                            <UU5.BlockLayout.Row>
-                                <UU5.BlockLayout.Column width={300}>Goal</UU5.BlockLayout.Column>
+                                <UU5.BlockLayout.Column width={300}><UU5.Bricks.Lsi lsi = {Lsi.description.goal} /></UU5.BlockLayout.Column>
                                 <UU5.BlockLayout.Column textAlign={"left"}>{props.data.goal}</UU5.BlockLayout.Column>
                            </UU5.BlockLayout.Row>
                            <UU5.BlockLayout.Line/>
                            <UU5.BlockLayout.Row>
-                                <UU5.BlockLayout.Column width={300}>Credits</UU5.BlockLayout.Column>
+                                <UU5.BlockLayout.Column width={300}><UU5.Bricks.Lsi lsi = {Lsi.description.credits} /></UU5.BlockLayout.Column>
                                 <UU5.BlockLayout.Column textAlign={"left"}>{props.data.credits}</UU5.BlockLayout.Column>
                            </UU5.BlockLayout.Row>
                            <UU5.BlockLayout.Row>
-                                <UU5.BlockLayout.Column width={300}>Language</UU5.BlockLayout.Column>
+                                <UU5.BlockLayout.Column width={300}><UU5.Bricks.Lsi lsi = {Lsi.description.language} /></UU5.BlockLayout.Column>
                                 <UU5.BlockLayout.Column textAlign={"left"}>{props.data.language}</UU5.BlockLayout.Column>
                            </UU5.BlockLayout.Row>
                            <UU5.BlockLayout.Row>
-                                <UU5.BlockLayout.Column width={300}>Teachers</UU5.BlockLayout.Column>
+                                <UU5.BlockLayout.Column width={300}><UU5.Bricks.Lsi lsi = {Lsi.description.teachers} /></UU5.BlockLayout.Column>
                                 <UU5.BlockLayout.Column textAlign={"left"}>{props.data.teachers}</UU5.BlockLayout.Column>
                            </UU5.BlockLayout.Row>
                            <UU5.BlockLayout.Line/>
                            <UU5.BlockLayout.Row>
-                                <UU5.BlockLayout.Column width={300}>Guarantor</UU5.BlockLayout.Column>
+                                <UU5.BlockLayout.Column width={300}><UU5.Bricks.Lsi lsi = {Lsi.description.guarantor} /></UU5.BlockLayout.Column>
                                 <UU5.BlockLayout.Column textAlign={"left"}>{props.data.guarantor}</UU5.BlockLayout.Column>
                            </UU5.BlockLayout.Row>
                            <UU5.BlockLayout.Line/>
                            <UU5.BlockLayout.Row>
-                                <UU5.BlockLayout.Column width={300}>State</UU5.BlockLayout.Column>
+                                <UU5.BlockLayout.Column width={300}><UU5.Bricks.Lsi lsi = {Lsi.description.state} /></UU5.BlockLayout.Column>
                                 <UU5.BlockLayout.Column textAlign={"left"}>{props.data.state}</UU5.BlockLayout.Column>
                            </UU5.BlockLayout.Row>
                         </UU5.BlockLayout.Block>

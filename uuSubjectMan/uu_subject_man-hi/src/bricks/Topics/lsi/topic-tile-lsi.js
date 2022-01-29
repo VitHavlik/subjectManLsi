@@ -1,7 +1,7 @@
 export default {
     menuActions:{
         editProgramme: {
-            cs: "Edituj stud. program",
+            cs: "Editovat studijní program",
             en: "Edit programme",
         },
         addDigitalContent:{
@@ -17,6 +17,14 @@ export default {
         name:{
             cs: "Název: ",
             en: "Name: "
-        }
+        },
+        link:{
+            cs: "Odkaz",
+            en: "Link"
+        },
+        delete:{
+            cs: "Odstranit",
+            en: "Delete"
+        },
     }
 };

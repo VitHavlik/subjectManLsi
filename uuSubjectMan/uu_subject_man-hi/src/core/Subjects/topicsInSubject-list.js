@@ -96,7 +96,7 @@ export const TopicsInSubjectList = createVisualComponent({
         const showModalTopic = useCallback((onSave) => {
             const modal = modalRef.current;
             modal.open({
-                header: "Přidej téma",
+                header: <UU5.Bricks.Lsi lsi = {Lsi.modal.header.topic.creation} />,
                 content: <TopicCreateModal
                     onSave={onSave}
                     onSaveDone={(opt) => {
@@ -142,7 +142,7 @@ export const TopicsInSubjectList = createVisualComponent({
         const showModalDigitalContent = useCallback((onSave) => {
             const modal = modalRef.current;
             modal.open({
-                header: "Přidej digitální obsah",
+                header: <UU5.Bricks.Lsi lsi = {Lsi.modal.header.digitalContent.creation} />,
                 content: <DigitalContentCreateModal
                     onSave={onSave}
                     onSaveDone={(opt) => {

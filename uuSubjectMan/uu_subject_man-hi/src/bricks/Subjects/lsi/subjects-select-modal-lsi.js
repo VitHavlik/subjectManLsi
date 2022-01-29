@@ -1,7 +1,7 @@
 export default {
     header: {
-        cs: "Vyber předěmět",
-        en: "Select subjects",
+        cs: "Vyber předmět",
+        en: "Select subject",
     },
     info: {
         cs: "Vybrání předmětu",

@@ -14,7 +14,7 @@ export default {
         },
         link:{
             cs:"Odkaz",
-            en:"link"
+            en:"Link"
         },
         types:{
             video:{

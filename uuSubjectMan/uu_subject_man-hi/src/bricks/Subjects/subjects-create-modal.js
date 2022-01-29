@@ -87,7 +87,7 @@ const SubjectsCreateModal = createVisualComponentWithRef({
           allowCustomTags
           required
         />
-        <UU5.Forms.TagSelect
+        <UU5.Forms.Text
           label={<UU5.Bricks.Lsi lsi={Lsi.form.guarantor} />}
           name="guarantor"
           value={props?.subject ? props?.subject.guarantor : undefined}

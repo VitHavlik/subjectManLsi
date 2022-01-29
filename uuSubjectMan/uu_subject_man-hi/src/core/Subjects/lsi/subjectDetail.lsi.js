@@ -1,13 +1,13 @@
 export default {
     header: {
-        cs: "Přídání studijního programu",
-        en: "Add new study programme",
+        cs: "Předmět",
+        en: "Subject",
     },
     info: {
-        cs: "Přídání studijního programu",
-        en: "Add new study programme",
+        cs: "Předmět",
+        en: "Subject",
     },
-    form: {
+    description: {
         name:{
             cs: "Název",
             en: "Name"
@@ -16,21 +16,13 @@ export default {
             cs:"Cíl předmětu",
             en:"Goal"
         },
-        languages:{
-            czech:{
-                cs:"Česky",
-                en:"Czech"
-            },
-            english:{
-                cs:"Anglicky",
-                en:"English"
-            },
+        language:{
             cs:"Vyučovací jazyk",
             en:"Language"
         },
         credits:{
             cs:"Počet kreditů za splnění",
-            en:"Credist per studium"
+            en:"Credits"
         },
         semester:{
             cs:"Semestr",
@@ -43,10 +35,10 @@ export default {
         guarantor:{
             cs:"Garant",
             en:"Guarantor"
+        },
+        state:{
+            cs:"Stav",
+            en:"State"
         }
-    },
-    submit: {
-        cs: "Přidej",
-        en: "Add",
     }
 };
